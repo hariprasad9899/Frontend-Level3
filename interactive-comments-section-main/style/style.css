@@ -122,3 +122,44 @@ main {
 .cmnt-text p {
     margin-top:0px;
 }
+
+.reply-cmnt {
+    width: 90%;
+    align-self: flex-end;
+}
+.comment-input {
+    width: 100%;
+    /* align-self: flex-end; */
+    padding: 20px;
+    padding-bottom: 10px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 10fr 2fr;
+    grid-template-rows: 1fr;
+    background-color: white;
+}
+.comment-input img {
+    width: 40px;
+}
+.comment-input textarea {
+    width: 100%;
+    font-size: 1em;
+    color: hsl(211, 10%, 45%);
+    padding:10px 10px 10px 10px;
+    resize: none;
+    font-family: 'Rubik', sans-serif;
+    border:1px solid hsl(223, 19%, 93%);
+}
+.comment-input button{
+    height: 40px;
+    padding: 10px;
+    border: none;
+    color: white;
+    background-color: hsl(238, 40%, 52%);
+    border-radius: 10px;
+    width: 100%;
+}
+.comment-input button:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}
