@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+html,body,main {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik', sans-serif;
+}
+main {
+    display: grid;
+}
+.container {
+    width: 60%;
+    /* height: 80%; */
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    background-color: hsl(228, 33%, 97%);
+}
+.comment {
+    width: 100%;
+    padding: 8px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 10fr 5fr;
+    grid-template-rows: 1fr 1fr;
+    background-color: white;
+}
+.vote {
+    width: 100%;
+    border-radius: 12px;
+    grid-column: 1;
+    grid-row: 1/5;
+    background-color: hsl(223, 19%, 93%);
+}
+.user-time {
+    width: 100%;
+}
+.reply-btn {
+    width: 100%;
+    /* background-color: lightgreen; */
+}
+.cmnt-text {
+    grid-row: 2;
+    grid-column: 2/-1;
+    width: 100%;
+    /* background-color: lightpink; */
+}
+.vote {
+    padding: 5px;
+    display: flex;
+    height: 70%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 15px;
+}
+.vote span {
+    font-size: 1.1em;
+    font-weight: 500;
+    color: hsl(238, 40%, 52%);
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.vote span img {
+    width: 14px;
+}
+.vote span img:hover {
+    cursor: pointer;
+}
+.user-time {
+    color: white;
+    display: flex;
+    gap: 10px;
+    font-size: 0.9em;
+    align-items: center;
+    /* background-color: lightblue; */
+}
+.user-time img {
+    width: 40px;
+}
+.user-time #name {
+    color: hsl(212, 24%, 26%);
+    font-weight: 600;
+}
+.user-time #created {
+    color: hsl(211, 10%, 45%);
+    font-weight: 500;
+}
+.reply-btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+}
+.reply-btn span {
+    font-size: 1.1em;
+    font-weight: 500;
+    color: hsl(238, 40%, 52%);
+}
+.reply-btn span:active {
+    color: hsl(211, 10%, 45%);
+}
+.reply-btn:hover {
+    cursor: pointer;
+}
+.cmnt-text {
+    color: hsl(211, 10%, 45%);
+    font-size: 1em;
+    padding-right: 5px;
+}
+.cmnt-text p {
+    margin-top:0px;
+}
+
+.reply-cmnt {
+    width: 90%;
+    align-self: flex-end;
+}
+.comment-input {
+    width: 100%;
+    /* align-self: flex-end; */
+    padding: 20px;
+    padding-bottom: 10px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 10fr 2fr;
+    grid-template-rows: 1fr;
+    background-color: white;
+}
+.comment-input img {
+    width: 40px;
+}
+.comment-input textarea {
+    width: 100%;
+    font-size: 1em;
+    color: hsl(211, 10%, 45%);
+    padding:10px 10px 10px 10px;
+    resize: none;
+    font-family: 'Rubik', sans-serif;
+    border:1px solid hsl(223, 19%, 93%);
+}
+.comment-input button{
+    height: 40px;
+    padding: 10px;
+    border: none;
+    color: white;
+    background-color: hsl(238, 40%, 52%);
+    border-radius: 10px;
+    width: 100%;
+}
+.comment-input button:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}

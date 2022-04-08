@@ -6,12 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Frontend Mentor | Interactive comments section</title>
   <link rel="stylesheet" href="./style/style.css">
+  <link rel="stylesheet" href="style_two.css">
   <link rel="stylesheet" href="./style/media.css">
 </head>
 <body>
     <main>
-        <div class="container">
-            <!-- comment div one -->
+        <!-- <div class="container">
+            comment div one
             <div class="comment" id="one">
                 <div class="vote">
                     <span class="eval add"><img src="./images/icon-plus.svg" alt="plus"></span>
@@ -32,7 +33,7 @@
                 </div>
             </div>
 
-            <!-- comment div two -->
+            comment div two
             <div class="comment" id="two">
               <div class="vote">
                   <span class="eval add"><img src="./images/icon-plus.svg" alt="plus"></span>
@@ -93,6 +94,104 @@
                     <p><span id="reply-to" class="to"></span></p>
                 </div>
             </div>
+
+            <div class="comment-input">
+                <img src="./images/avatars/image-juliusomo.png" alt="">
+                <textarea name="getComment" id="comment-box" placeholder="Add a comment..." cols="10" rows="5.5"></textarea>
+                <button>SEND</button>
+            </div>
+
+        </div> -->
+
+
+        <div class="container">
+            <!-- comment div one -->
+            <div class="cmnt-wrapper">
+                <div class="comment" id="one">
+                    <div class="vote">
+                        <span class="eval add"><img src="./images/icon-plus.svg" alt="plus"></span>
+                        <span>0</span>
+                        <span class="eval sub"><img src="./images/icon-minus.svg" alt="minus"></span>
+                    </div>
+                    <div class="user-time">
+                        <img src="" alt="">
+                        <span id="name"></span>
+                        <span id="created"></span>
+                    </div>
+                    <div class="reply-btn">
+                        <img src="./images/icon-reply.svg" alt="">
+                        <span>Reply</span>
+                    </div>
+                    <div class="cmnt-text">
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            
+
+            <!-- comment div two -->
+            <div class="cmnt-wrapper">
+                <div class="comment" id="two">
+                    <div class="vote">
+                        <span class="eval add"><img src="./images/icon-plus.svg" alt="plus"></span>
+                        <span>0</span>
+                        <span class="eval sub"><img src="./images/icon-minus.svg" alt="minus"></span>
+                    </div>
+                    <div class="user-time">
+                        <img src="" alt="">
+                        <span id="name"></span>
+                        <span id="created"></span>
+                    </div>
+                    <div class="reply-btn">
+                        <img src="./images/icon-reply.svg" alt="">
+                        <span>Reply</span>
+                    </div>
+                    <div class="cmnt-text">
+                        <p></p>
+                    </div>
+                </div>
+
+                <div class="comment reply-cmnt">
+                    <div class="vote">
+                        <span class="eval add"><img src="./images/icon-plus.svg" alt="plus"></span>
+                        <span>0</span>
+                        <span class="eval sub"><img src="./images/icon-minus.svg" alt="minus"></span>
+                    </div>
+                    <div class="user-time">
+                        <img src="" alt="">
+                        <span id="name"></span>
+                        <span id="created"></span>
+                    </div>
+                    <div class="reply-btn">
+                        <img src="./images/icon-reply.svg" alt="">
+                        <span>Reply</span>
+                    </div>
+                    <div class="cmnt-text">
+                        <p><span id="reply-to"></span></p>
+                    </div>
+                </div>
+            </div>
+            
+
+            <!-- <div class="comment reply-cmnt current-user">
+                <div class="vote">
+                    <span class="eval add"><img src="./images/icon-plus.svg" alt="plus"></span>
+                    <span>0</span>
+                    <span class="eval sub"><img src="./images/icon-minus.svg" alt="minus"></span>
+                </div>
+                <div class="user-time">
+                    <img src="" alt="">
+                    <span id="name"></span>
+                    <span id="created"></span>
+                </div>
+                <div class="reply-btn">
+                    <img src="./images/icon-reply.svg" alt="">
+                    <span>Reply</span>
+                </div>
+                <div class="cmnt-text">
+                    <p><span id="reply-to" class="to"></span></p>
+                </div>
+            </div> -->
 
             <!-- <div class="comment-input">
                 <img src="./images/avatars/image-juliusomo.png" alt="">
