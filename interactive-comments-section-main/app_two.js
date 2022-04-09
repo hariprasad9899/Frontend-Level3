@@ -22,10 +22,7 @@ var vote = document.getElementsByClassName('vote');
         }
     }
 }
-
-
 voting();
-
 // adding default comments from json data onload 
 var comment = document.getElementsByClassName('comment');
 window.onload = function() {    
@@ -48,6 +45,8 @@ window.onload = function() {
             user_name.innerText = x["user"]["username"];
             createdAt.innerText = x["createdAt"]
             user_cmnt.innerText = x["content"];
+            user_cmnt.readOnly = "true";
+            user_cmnt.style.outline = "none";
 
 
             if (x.replies.length > 0) {
@@ -56,8 +55,7 @@ window.onload = function() {
                     current_elem = current_elem.nextElementSibling;
                     let user_time = current_elem.getElementsByClassName('user-time')[0];
                     let cmnt_text = current_elem.getElementsByClassName('cmnt-text')[0];
-                    let p_elem = cmnt_text.getElementsByTagName('p')[0];
-                    let reply_to = p_elem.getElementsByTagName('span')[0];
+                    let p_elem = cmnt_text.getElementsByTagName('textarea')[0];
                     let user_img = user_time.firstElementChild;
                     let user_name = user_img.nextElementSibling;
                     let createdAt = user_name.nextElementSibling;
@@ -65,8 +63,11 @@ window.onload = function() {
                     user_name.innerText = x.replies[i].user.username;
                     createdAt.innerText = x.replies[i].createdAt;
                     cmnt_text.innerText = x.replies[i].content;
-                    reply_to.innerText = "@" + x.replies[i].replyingTo;
-                    cmnt_text.innerText = reply_to.innerText +" "+ x.replies[i].content;
+                    p_elem.innerText = x.replies[i].content;
+
+                    if(i >= 1) {
+                        p_elem.style.outline = "1px solid black";
+                    }
                 }
             }
         }
@@ -122,6 +123,51 @@ let main_func = function() {
 
 main_func();
 
+function getConf(cmnt) {
+    var del = document.getElementById('del');
+    var button = del.getElementsByTagName('button');
+    var lightbg = document.getElementById('lightbg')
+    lightbg.style.display = "block";
+    del.style.display = "block";
+    for(const btn of button) {
+        btn.addEventListener('click', () => {
+            if(btn.id === "delete") {
+                lightbg.style.display = "none";
+                del.style.display = "none";
+                cmnt.parentElement.parentElement.remove()
+            } else {
+                lightbg.style.display = "none";
+                del.style.display = "none";
+            }
+        })
+    }
+}
+
+let delete_my_cmnt = function() {
+    var delete_cmnt = document.getElementsByClassName('delete');
+    for(let i = 0; i < delete_cmnt.length; i++) {
+        delete_cmnt[i].addEventListener('click', () => {
+            getConf(delete_cmnt[i]);
+        })
+    }
+}
+
+
+delete_my_cmnt();
+
+let edit_my_cmnt = function() {
+    var edit_cmnt = document.getElementsByClassName('edit');
+    for(let i = 0; i < edit_cmnt.length; i++) {
+        edit_cmnt[i].addEventListener('click', () => {
+            let editDiv = edit_cmnt[i].parentElement.nextElementSibling.getElementsByTagName('textarea')[0]
+            editDiv.readOnly = false;
+            editDiv.style.outline = "2px solid hsl(212, 24%, 26%)";
+        })
+    }
+}
+
+edit_my_cmnt();
+
 let myReplyComment = document.getElementsByClassName('reply-cmnt')[1];
 let clonedNode = myReplyComment.cloneNode(true);
 const btn_elem = myCommentDiv.getElementsByTagName('button');
@@ -130,14 +176,16 @@ for (let i = 0; i < btn_elem.length; i++) {
     btn_elem[i].onclick = function() {
         if(textarea_elem.value != "") {
             myReplyNode = clonedNode.cloneNode(true);
-            let replyDiv = myReplyNode.getElementsByClassName('cmnt-text')[0]
-            let replyText = replyDiv.getElementsByTagName('p')[0];
+            let replyDiv = myReplyNode.getElementsByClassName('cmnt-text')[0];
+            let replyText = replyDiv.getElementsByTagName('textarea')[0];
             let user_time = myReplyNode.getElementsByClassName("user-time")[0];
             let img_elem = user_time.getElementsByTagName('img')[0];
             let name_elem = user_time.getElementsByTagName('span')[0];
             let time_elem = user_time.getElementsByTagName('span')[1];
             img_elem.src = "./images/avatars/image-juliusomo.png";
             replyText.innerText = textarea_elem.value;
+            replyText.readOnly = "true";
+            replyText.style.outline = "none";
             name_elem.innerText = "juliusomo";
             time_elem.innerText = "1 Min ago";
             let cmnt_type = main_func();
@@ -146,16 +194,22 @@ for (let i = 0; i < btn_elem.length; i++) {
                 cmnt_wrapper.appendChild(myReplyNode);
                 main_func()
                 voting();
+                delete_my_cmnt();
+                edit_my_cmnt();
             } else {
                 let cmnt_wrapper_rep = btn_elem[i].parentElement.previousElementSibling;
                 cmnt_wrapper_rep.after(myReplyNode);
                 main_func()
                 voting();
+                delete_my_cmnt();
+                edit_my_cmnt();
             }
             myCommentDiv.remove();
         }   
     }
 }
+
+
 
 
 

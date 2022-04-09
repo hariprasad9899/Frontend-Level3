@@ -28,7 +28,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    border: 2px solid red;
+    /* border: 2px solid red; */
 }
 .comment {
     width: 100%;
@@ -58,6 +58,17 @@ main {
     grid-column: 2/-1;
     width: 100%;
     /* background-color: lightpink; */
+}
+.cmnt-text textarea {
+    width: 100%;
+    resize: none;
+    border: none;
+    font-size: 1em;
+    color: hsl(211, 10%, 45%);
+    outline: 2px solid hsl(212, 24%, 26%);
+    resize: none;
+    border-radius: 5px;
+    font-family: 'Rubik', sans-serif;
 }
 .vote {
     padding: 5px;
@@ -104,10 +115,14 @@ main {
     color: hsl(211, 10%, 45%);
     font-weight: 500;
 }
-.reply-btn {
+.reply-btn, 
+.user-reply-btn {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    gap: 8px;
+}
+.user-reply-btn {
     gap: 8px;
 }
 .reply-btn span {
@@ -118,7 +133,7 @@ main {
 .reply-btn span:active {
     color: hsl(211, 10%, 45%);
 }
-.reply-btn:hover {
+.reply-btn:hover, .user-reply-btn {
     cursor: pointer;
 }
 .cmnt-text {
@@ -159,7 +174,9 @@ main {
     padding:10px 10px 10px 10px;
     resize: none;
     font-family: 'Rubik', sans-serif;
-    border:1px solid hsl(223, 19%, 93%);
+    border:none;
+    border-radius: 5px;
+    outline: 2px solid hsl(212, 24%, 26%);
 }
 .comment-input button{
     height: 40px;
@@ -173,4 +190,55 @@ main {
 .comment-input button:hover {
     opacity: 0.6;
     cursor: pointer;
+}
+
+#del {
+    z-index: 2;
+    width: 300px;
+    padding: 20px;
+    color: hsl(212, 24%, 26%);
+    background-color: white;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.del-info p{
+    color: hsl(211, 10%, 45%);
+}
+.del-conf {
+    display: flex;
+    gap: 10px;
+}
+.del-conf button {
+    width: 50%;
+    padding: 8px;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    border-radius: 5px;
+    color: white;
+    font-family: 'Rubik', sans-serif;
+}
+.del-conf #cancel {
+    background-color: hsl(211, 10%, 45%);
+}
+.del-conf #delete {
+    background-color: hsl(358, 79%, 66%);
+}
+.del-conf button:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+#lightbg {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 130%;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.368);
 }
