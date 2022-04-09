@@ -24,6 +24,12 @@ main {
     flex-direction: column;
     background-color: hsl(228, 33%, 97%);
 }
+.cmnt-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 2px solid red;
+}
 .comment {
     width: 100%;
     padding: 8px;
@@ -57,6 +63,7 @@ main {
     padding: 5px;
     display: flex;
     height: 70%;
+    min-height: 80%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -124,6 +131,10 @@ main {
 }
 
 .reply-cmnt {
+    width: 90%;
+    align-self: flex-end;
+}
+.reply {
     width: 90%;
     align-self: flex-end;
 }

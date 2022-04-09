@@ -5,9 +5,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Frontend Mentor | Interactive comments section</title>
-  <link rel="stylesheet" href="./style/style.css">
-  <link rel="stylesheet" href="style_two.css">
-  <link rel="stylesheet" href="./style/media.css">
+  <!-- <link rel="stylesheet" href="./style/style.css"> -->
+  <link rel="stylesheet" href="./style_two.css">
+  <!-- <link rel="stylesheet" href="./style/media.css"> -->
+  <link rel="stylesheet" href="./style/media_two.css">
 </head>
 <body>
     <main>
@@ -106,7 +107,7 @@
 
         <div class="container">
             <!-- comment div one -->
-            <div class="cmnt-wrapper">
+            <div class="cmnt-wrapper one">
                 <div class="comment" id="one">
                     <div class="vote">
                         <span class="eval add"><img src="./images/icon-plus.svg" alt="plus"></span>
@@ -130,7 +131,7 @@
             
 
             <!-- comment div two -->
-            <div class="cmnt-wrapper">
+            <div class="cmnt-wrapper two">
                 <div class="comment" id="two">
                     <div class="vote">
                         <span class="eval add"><img src="./images/icon-plus.svg" alt="plus"></span>
@@ -151,6 +152,7 @@
                     </div>
                 </div>
 
+                <!-- Reply one -->
                 <div class="comment reply-cmnt">
                     <div class="vote">
                         <span class="eval add"><img src="./images/icon-plus.svg" alt="plus"></span>
@@ -170,6 +172,28 @@
                         <p><span id="reply-to"></span></p>
                     </div>
                 </div>
+
+                <!-- Reply Two -->
+                <div class="comment reply-cmnt current-user">
+                    <div class="vote">
+                        <span class="eval add"><img src="./images/icon-plus.svg" alt="plus"></span>
+                        <span>0</span>
+                        <span class="eval sub"><img src="./images/icon-minus.svg" alt="minus"></span>
+                    </div>
+                    <div class="user-time">
+                        <img src="" alt="">
+                        <span id="name"></span>
+                        <span id="created"></span>
+                    </div>
+                    <div class="reply-btn">
+                        <img src="./images/icon-reply.svg" alt="">
+                        <span>Reply</span>
+                    </div>
+                    <div class="cmnt-text">
+                        <p><span id="reply-to" class="to"></span></p>
+                    </div>
+                </div>
+
             </div>
             
 
@@ -202,5 +226,5 @@
         </div>
     </main>
 </body>
-<script src="./app/app.js"></script>
+<script src="./app_two.js"></script>
 </html>

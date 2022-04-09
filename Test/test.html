@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+<style>
+    .master {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .tile {
+        width: 160px;
+        height: 160px;
+        border: 1px solid black;
+    }
+</style>
+<body>
+    <div class="master">
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+    </div>
+    <button id="btn">AddColor</button>
+    <script>
+        var master = document.getElementsByClassName('master')[0];
+        var tiles = document.getElementsByClassName('tile');
+
+        setInterval(function() {
+            for(const singleTile of tiles) {
+            singleTile.style.backgroundColor = "blue";
+        } 
+        },1)
+        
+
+
+        let btn = document.getElementById('btn');
+        let newDiv = document.createElement('div');
+        newDiv.className = 'tile';
+        btn.addEventListener('click', () => {
+            master.append(newDiv)
+        })
+
+        // document.body.onchange = function() {
+        //     tiles = document.getElementsByClassName('tile');
+        // }
+        
+    </script>
+</body>
+</html>
