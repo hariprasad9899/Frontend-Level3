@@ -62,12 +62,8 @@ window.onload = function() {
                     user_img.src = x.replies[i].user.image.png;
                     user_name.innerText = x.replies[i].user.username;
                     createdAt.innerText = x.replies[i].createdAt;
-                    cmnt_text.innerText = x.replies[i].content;
                     p_elem.innerText = x.replies[i].content;
-
-                    if(i >= 1) {
-                        p_elem.style.outline = "1px solid black";
-                    }
+                    p_elem.style.outline = "none";
                 }
             }
         }
@@ -87,7 +83,7 @@ textarea_elem.id = "comment-box";
 textarea_elem.placeholder = "Add a comment...";
 textarea_elem.rows = "5.5";
 textarea_elem.cols = "10";
-button_elem.innerText = "SEND";
+button_elem.innerText = "REPLY";
 myCommentDiv.appendChild(img_elem);
 myCommentDiv.appendChild(textarea_elem);
 myCommentDiv.appendChild(button_elem);
@@ -106,7 +102,7 @@ let main_func = function() {
                     myCommentDiv.style.width = "90%";
                     myCommentDiv.style.alignSelf = "flex-end";
                     commentDiv.after(myCommentDiv);
-                    console.log(commentDiv);
+                    // console.log(commentDiv);
                     cmnt_type = "replied";
                 } else {
                     let commentDiv = reply_btn[i].parentElement.parentElement;
@@ -155,18 +151,40 @@ let delete_my_cmnt = function() {
 
 delete_my_cmnt();
 
+
+
 let edit_my_cmnt = function() {
     var edit_cmnt = document.getElementsByClassName('edit');
     for(let i = 0; i < edit_cmnt.length; i++) {
         edit_cmnt[i].addEventListener('click', () => {
-            let editDiv = edit_cmnt[i].parentElement.nextElementSibling.getElementsByTagName('textarea')[0]
+            let editDiv = edit_cmnt[i].parentElement.nextElementSibling.getElementsByTagName('textarea')[0];
             editDiv.readOnly = false;
             editDiv.style.outline = "2px solid hsl(212, 24%, 26%)";
+            var myUpdate = editDiv.parentElement.nextElementSibling.getElementsByTagName('button')[0];
+            myUpdate.style.display = "inline";
         })
     }
 }
 
-edit_my_cmnt();
+// edit_my_cmnt();
+
+
+let update_my_cmnt = function() {
+    let upBtn = document.getElementsByClassName('updateBtn');
+    for(const updateBtn of upBtn) {
+        updateBtn.addEventListener('click', () => {
+            let textarea_elem = updateBtn.parentElement.previousElementSibling.getElementsByTagName('textarea')[0];
+            console.log(textarea_elem)
+            textarea_elem.readOnly = "true";
+            textarea_elem.style.outline = "none";
+            updateBtn.style.display = "none";
+        })
+    }
+}
+
+update_my_cmnt();
+
+
 
 let myReplyComment = document.getElementsByClassName('reply-cmnt')[1];
 let clonedNode = myReplyComment.cloneNode(true);
@@ -195,13 +213,16 @@ for (let i = 0; i < btn_elem.length; i++) {
                 main_func()
                 voting();
                 delete_my_cmnt();
+                update_my_cmnt();
                 edit_my_cmnt();
             } else {
                 let cmnt_wrapper_rep = btn_elem[i].parentElement.previousElementSibling;
                 cmnt_wrapper_rep.after(myReplyNode);
+                edit_my_cmnt();
                 main_func()
                 voting();
                 delete_my_cmnt();
+                update_my_cmnt();
                 edit_my_cmnt();
             }
             myCommentDiv.remove();
