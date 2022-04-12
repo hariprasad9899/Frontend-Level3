@@ -83,7 +83,7 @@ textarea_elem.id = "comment-box";
 textarea_elem.placeholder = "Add a comment...";
 textarea_elem.rows = "5.5";
 textarea_elem.cols = "10";
-button_elem.innerText = "REPLY";
+button_elem.innerText = "SEND";
 myCommentDiv.appendChild(img_elem);
 myCommentDiv.appendChild(textarea_elem);
 myCommentDiv.appendChild(button_elem);
@@ -102,7 +102,6 @@ let main_func = function() {
                     myCommentDiv.style.width = "90%";
                     myCommentDiv.style.alignSelf = "flex-end";
                     commentDiv.after(myCommentDiv);
-                    // console.log(commentDiv);
                     cmnt_type = "replied";
                 } else {
                     let commentDiv = reply_btn[i].parentElement.parentElement;
@@ -148,33 +147,13 @@ let delete_my_cmnt = function() {
     }
 }
 
-
 delete_my_cmnt();
-
-
-
-let edit_my_cmnt = function() {
-    var edit_cmnt = document.getElementsByClassName('edit');
-    for(let i = 0; i < edit_cmnt.length; i++) {
-        edit_cmnt[i].addEventListener('click', () => {
-            let editDiv = edit_cmnt[i].parentElement.nextElementSibling.getElementsByTagName('textarea')[0];
-            editDiv.readOnly = false;
-            editDiv.style.outline = "2px solid hsl(212, 24%, 26%)";
-            var myUpdate = editDiv.parentElement.nextElementSibling.getElementsByTagName('button')[0];
-            myUpdate.style.display = "inline";
-        })
-    }
-}
-
-// edit_my_cmnt();
-
 
 let update_my_cmnt = function() {
     let upBtn = document.getElementsByClassName('updateBtn');
     for(const updateBtn of upBtn) {
         updateBtn.addEventListener('click', () => {
             let textarea_elem = updateBtn.parentElement.previousElementSibling.getElementsByTagName('textarea')[0];
-            console.log(textarea_elem)
             textarea_elem.readOnly = "true";
             textarea_elem.style.outline = "none";
             updateBtn.style.display = "none";
@@ -185,6 +164,19 @@ let update_my_cmnt = function() {
 update_my_cmnt();
 
 
+function edit_my_cmnt() {
+    var edit_cmnt = document.getElementsByClassName('edit');
+    for(let i = 0; i < edit_cmnt.length; i++) {
+        edit_cmnt[i].addEventListener('click', () => {
+            let editDiv = edit_cmnt[i].parentElement.nextElementSibling.getElementsByTagName('textarea')[0];
+            editDiv.readOnly = false;
+            editDiv.style.outline = "2px solid hsl(212, 24%, 26%)";
+            let myUpdate = editDiv.parentElement.nextElementSibling.getElementsByTagName('button')[0];
+            myUpdate.style.display = "inline";
+        })
+    }
+}
+
 
 let myReplyComment = document.getElementsByClassName('reply-cmnt')[1];
 let clonedNode = myReplyComment.cloneNode(true);
@@ -194,8 +186,7 @@ for (let i = 0; i < btn_elem.length; i++) {
     btn_elem[i].onclick = function() {
         if(textarea_elem.value != "") {
             myReplyNode = clonedNode.cloneNode(true);
-            let replyDiv = myReplyNode.getElementsByClassName('cmnt-text')[0];
-            let replyText = replyDiv.getElementsByTagName('textarea')[0];
+            let replyText = myReplyNode.getElementsByTagName('textarea')[0];
             let user_time = myReplyNode.getElementsByClassName("user-time")[0];
             let img_elem = user_time.getElementsByTagName('img')[0];
             let name_elem = user_time.getElementsByTagName('span')[0];
@@ -213,29 +204,21 @@ for (let i = 0; i < btn_elem.length; i++) {
                 main_func()
                 voting();
                 delete_my_cmnt();
+                edit_my_cmnt()
                 update_my_cmnt();
-                edit_my_cmnt();
             } else {
                 let cmnt_wrapper_rep = btn_elem[i].parentElement.previousElementSibling;
                 cmnt_wrapper_rep.after(myReplyNode);
-                edit_my_cmnt();
                 main_func()
                 voting();
                 delete_my_cmnt();
+                edit_my_cmnt()
                 update_my_cmnt();
-                edit_my_cmnt();
             }
             myCommentDiv.remove();
         }   
     }
 }
-
-
-
-
-
-
-
 
 
 
