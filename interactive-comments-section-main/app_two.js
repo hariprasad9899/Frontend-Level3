@@ -62,7 +62,8 @@ window.onload = function() {
                     user_img.src = x.replies[i].user.image.png;
                     user_name.innerText = x.replies[i].user.username;
                     createdAt.innerText = x.replies[i].createdAt;
-                    p_elem.innerText = x.replies[i].content;
+                    let replyingTo = "@" + x.replies[i].replyingTo + " ";
+                    p_elem.innerText = replyingTo + x.replies[i].content;
                     p_elem.style.outline = "none";
                 }
             }
@@ -201,7 +202,6 @@ for (let i = 0; i < btn_elem.length; i++) {
             let name_elem = user_time.getElementsByTagName('span')[0];
             let time_elem = user_time.getElementsByTagName('span')[1];
             img_elem.src = "./images/avatars/image-juliusomo.png";
-            replyText.innerText = textarea_elem.value;
             replyText.readOnly = "true";
             replyText.style.outline = "none";
             name_elem.innerText = "juliusomo";
@@ -210,10 +210,16 @@ for (let i = 0; i < btn_elem.length; i++) {
             console.log(cmnt_type);
             if(cmnt_type == "comment") {
                 let cmnt_wrapper = btn_elem[i].parentElement.parentElement;
+                let name_elem = cmnt_wrapper.getElementsByClassName('user-time')[0];
+                let name = name_elem.querySelector('#name');
+                replyText.innerText = "@" + name.innerText + " " + textarea_elem.value;
                 cmnt_wrapper.appendChild(myReplyNode);
                 wrapper();
             } else {
                 let cmnt_wrapper_rep = btn_elem[i].parentElement.previousElementSibling;
+                let name_elem = cmnt_wrapper_rep.getElementsByClassName('user-time')[0];
+                let name = name_elem.querySelector('#name');
+                replyText.innerText = "@" + name.innerText + " " + textarea_elem.value;
                 cmnt_wrapper_rep.after(myReplyNode);
                 wrapper();
             }
