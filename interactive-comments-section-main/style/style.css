@@ -6,31 +6,37 @@
 }
 html,body,main {
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     margin: 0;
     padding: 0;
     font-family: 'Rubik', sans-serif;
 }
 main {
     display: grid;
+    background-color: hsl(228, 33%, 97%);
 }
 .container {
     width: 60%;
-    /* height: 80%; */
     margin: auto;
     padding: 20px;
     display: flex;
     gap: 20px;
     flex-direction: column;
-    background-color: hsl(228, 33%, 97%);
+    
+}
+.cmnt-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 .comment {
     width: 100%;
     padding: 8px;
+    padding-bottom: 2px;
     display: grid;
     gap: 10px;
     grid-template-columns: 1fr 10fr 5fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
     background-color: white;
 }
 .vote {
@@ -42,6 +48,7 @@ main {
 }
 .user-time {
     width: 100%;
+    /* background-color: lightpink; */
 }
 .reply-btn {
     width: 100%;
@@ -53,10 +60,23 @@ main {
     width: 100%;
     /* background-color: lightpink; */
 }
+.cmnt-text textarea {
+    width: 100%;
+    resize: none;
+    border: none;
+    font-size: 1em;
+    padding: 10px 10px 20px 2px;
+    color: hsl(211, 10%, 45%);
+    outline: 2px solid hsl(212, 24%, 26%);
+    resize: none;
+    border-radius: 5px;
+    font-family: 'Rubik', sans-serif;
+}
 .vote {
     padding: 5px;
     display: flex;
     height: 70%;
+    min-height: 80%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -97,12 +117,17 @@ main {
     color: hsl(211, 10%, 45%);
     font-weight: 500;
 }
-.reply-btn {
+.reply-btn, 
+.user-reply-btn {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     gap: 8px;
 }
+.user-reply-btn .delete{
+    color: hsl(358, 79%, 66%);
+}
+
 .reply-btn span {
     font-size: 1.1em;
     font-weight: 500;
@@ -111,8 +136,9 @@ main {
 .reply-btn span:active {
     color: hsl(211, 10%, 45%);
 }
-.reply-btn:hover {
+.reply-btn:hover, .user-reply-btn .delete:hover,.user-reply-btn .edit:hover {
     cursor: pointer;
+    opacity: 0.8;
 }
 .cmnt-text {
     color: hsl(211, 10%, 45%);
@@ -124,6 +150,10 @@ main {
 }
 
 .reply-cmnt {
+    width: 90%;
+    align-self: flex-end;
+}
+.reply {
     width: 90%;
     align-self: flex-end;
 }
@@ -148,7 +178,9 @@ main {
     padding:10px 10px 10px 10px;
     resize: none;
     font-family: 'Rubik', sans-serif;
-    border:1px solid hsl(223, 19%, 93%);
+    border:none;
+    border-radius: 5px;
+    outline: 2px solid hsl(212, 24%, 26%);
 }
 .comment-input button{
     height: 40px;
@@ -162,4 +194,92 @@ main {
 .comment-input button:hover {
     opacity: 0.6;
     cursor: pointer;
+}
+
+#del {
+    z-index: 2;
+    width: 300px;
+    padding: 20px;
+    color: hsl(212, 24%, 26%);
+    background-color: white;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 10px;
+    top:50%;
+    left:50%;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+.del-info p{
+    color: hsl(211, 10%, 45%);
+}
+.del-conf {
+    display: flex;
+    gap: 10px;
+}
+.del-conf button {
+    width: 50%;
+    padding: 8px;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    border-radius: 5px;
+    color: white;
+    font-family: 'Rubik', sans-serif;
+}
+.del-conf #cancel {
+    background-color: hsl(211, 10%, 45%);
+}
+.del-conf #delete {
+    background-color: hsl(358, 79%, 66%);
+}
+.del-conf button:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+#lightbg {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.368);
+}
+
+.current-user {
+    background-color: lightblue;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 10fr 5fr;
+    grid-template-rows: 1fr 1fr;
+    background-color: white;
+}
+.current-user .edit-btn {
+    text-align: right;
+    grid-row: 3;
+    grid-column: -2/-1;
+}
+.current-user .edit-btn button {
+    display:none;
+    width: 60%;
+    border: none;
+    color: white;
+    font-size: 1em;
+    outline: none;
+    border-radius: 5px;
+    background-color:hsl(238, 40%, 52%);
+    padding: 7px;
+}
+.edit-btn button:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+.current-user #created::before{
+    content: "you";
+    padding: 3px;
+    margin-right:5px;
+    background-color: hsl(238, 40%, 52%);
+    color: white;
 }

@@ -1,5 +1,5 @@
 
-// upvote and downvote
+// upvote and downvote added to every element
 let voting = function() {
 var vote = document.getElementsByClassName('vote');
     for (let i = 0; i < vote.length; i++) {
@@ -23,7 +23,9 @@ var vote = document.getElementsByClassName('vote');
     }
 }
 voting();
-// adding default comments from json data onload 
+
+
+// adding default comments from json data onload asynchronously
 var comment = document.getElementsByClassName('comment');
 window.onload = function() {    
     async function getData() {
@@ -48,6 +50,7 @@ window.onload = function() {
             user_cmnt.readOnly = "true";
             user_cmnt.style.outline = "none";
 
+            // also adding the replies of each users from the json data
 
             if (x.replies.length > 0) {
                 let current_elem = comment[i];
@@ -73,6 +76,7 @@ window.onload = function() {
 }
 
 
+// creating a div element got getting the user input for reply
 const myCommentDiv = document.createElement('div');
 const img_elem = document.createElement('img');
 const textarea_elem = document.createElement('textarea');
@@ -82,13 +86,19 @@ img_elem.src = "./images/avatars/image-juliusomo.png";
 myCommentDiv.className = 'comment-input';
 textarea_elem.id = "comment-box";
 textarea_elem.placeholder = "Add a comment...";
-textarea_elem.rows = "5.5";
+textarea_elem.rows = "4";
 textarea_elem.cols = "10";
 button_elem.innerText = "SEND";
 myCommentDiv.appendChild(img_elem);
 myCommentDiv.appendChild(textarea_elem);
 myCommentDiv.appendChild(button_elem);
+
+
+// initializing the variable in order to user whether user replying to a comment or an reply.
 var cmnt_type = "";
+
+
+// adding a reply input box, whenever an user click on reply button
 let main_func = function() {
     var cmnt_wrapper = document.getElementsByClassName('cmnt-wrapper');
     for(let j = 0; j < cmnt_wrapper.length; j++) {
@@ -102,8 +112,6 @@ let main_func = function() {
                     myCommentDiv.style.width = "90%";
                     myCommentDiv.style.alignSelf = "flex-end";
                     commentDiv.after(myCommentDiv);
-                    // let scrolling_height =  cmnt_wrapper[j].scrollHeight;
-                    // window.scrollBy(0,scrolling_height)
                     cmnt_type = "replied";
                 } else {
                     let commentDiv = reply_btn[i].parentElement.parentElement;
@@ -124,72 +132,11 @@ let main_func = function() {
     return cmnt_type;
 }
 
+// calling this so that it will be intialized to the existing parts
 main_func();
 
-function getConf(cmnt) {
-    var del = document.getElementById('del');
-    var button = del.getElementsByTagName('button');
-    var lightbg = document.getElementById('lightbg')
-    let height_of_screen = document.body.scrollHeight;
-    lightbg.style.display = "block";
-    lightbg.style.height = height_of_screen + "px";
-    del.style.display = "block";
-    for(const btn of button) {
-        btn.addEventListener('click', () => {
-            if(btn.id === "delete") {
-                lightbg.style.display = "none";
-                del.style.display = "none";
-                cmnt.parentElement.parentElement.remove()
-            } else {
-                lightbg.style.display = "none";
-                del.style.display = "none";
-            }
-        })
-    }
-}
 
-let delete_my_cmnt = function() {
-    var delete_cmnt = document.getElementsByClassName('delete');
-    for(let i = 0; i < delete_cmnt.length; i++) {
-        delete_cmnt[i].addEventListener('click', () => {
-            getConf(delete_cmnt[i]);
-        })
-    }
-}
-
-delete_my_cmnt();
-
-let update_my_cmnt = function() {
-    let upBtn = document.getElementsByClassName('updateBtn');
-    for(const updateBtn of upBtn) {
-        updateBtn.addEventListener('click', () => {
-            let textarea_elem = updateBtn.parentElement.previousElementSibling.getElementsByTagName('textarea')[0];
-            textarea_elem.readOnly = "true";
-            textarea_elem.style.outline = "none";
-            updateBtn.style.display = "none";
-        })
-    }
-}
-
-update_my_cmnt();
-
-function show(event) {
-    let editDiv = this.parentElement.nextElementSibling.getElementsByTagName('textarea')[0];
-    editDiv.readOnly = false;
-    editDiv.style.outline = "2px solid hsl(212, 24%, 26%)";
-    let myUpdate = editDiv.parentElement.nextElementSibling.getElementsByTagName('button')[0];
-    myUpdate.style.display = "inline";
-}
-
-function edit_my_cmnt() {
-    var edit_cmnt = document.getElementsByClassName('edit');
-    for(let i = 0; i < edit_cmnt.length; i++) {
-        edit_cmnt[i].addEventListener('click',show)
-    }
-}
-
-edit_my_cmnt();
-
+// added the below wrapper function, which will be invoked, whenever a reply is added.
 function wrapper() {
     main_func()
     voting();
@@ -238,6 +185,75 @@ for (let i = 0; i < btn_elem.length; i++) {
     }
 }
 
+// function to let the text area editable
+function edit(event) {
+    let editDiv = this.parentElement.nextElementSibling.getElementsByTagName('textarea')[0];
+    editDiv.readOnly = false;
+    editDiv.style.outline = "2px solid hsl(212, 24%, 26%)";
+    let myUpdate = editDiv.parentElement.nextElementSibling.getElementsByTagName('button')[0];
+    myUpdate.style.display = "inline";
+}
+
+// will be invoked when user clicks on edit
+let edit_my_cmnt =  function() {
+    var edit_cmnt = document.getElementsByClassName('edit');
+    for(let i = 0; i < edit_cmnt.length; i++) {
+        edit_cmnt[i].addEventListener('click',edit)
+    }
+}
+edit_my_cmnt();
+
+
+// function inovked when user clicks on update button
+function update(event) {
+    let textarea_elem = this.parentElement.previousElementSibling.getElementsByTagName('textarea')[0];
+    textarea_elem.readOnly = "true";
+    textarea_elem.style.outline = "none";
+    this.style.display = "none";
+}
+
+// funtion will be invoked and change the textarea to editable when clicked
+let update_my_cmnt = function() {
+    let upBtn = document.getElementsByClassName('updateBtn');
+    for(const updateBtn of upBtn) {
+        updateBtn.addEventListener('click', update)
+    }
+}
+update_my_cmnt();
+
+// this will be invoked to show the delete confirmation after overlaying the screen
+function getConf(event) {
+    var del = document.getElementById('del');
+    var button = del.getElementsByTagName('button');
+    var lightbg = document.getElementById('lightbg')
+    let height_of_screen = document.body.scrollHeight;
+    lightbg.style.display = "block";
+    lightbg.style.height = height_of_screen + "px";
+    del.style.display = "block";
+    for(const btn of button) {
+        btn.addEventListener('click', () => {
+            if(btn.id === "delete") {
+                lightbg.style.display = "none";
+                del.style.display = "none";
+                this.parentElement.parentElement.remove()
+            } else {
+                lightbg.style.display = "none";
+                del.style.display = "none";
+            }
+        })
+    }
+}
+
+
+// delete function will be invoked when delete button is clicked to show the confirmation
+let delete_my_cmnt = function() {
+    var delete_cmnt = document.getElementsByClassName('delete');
+    for(let i = 0; i < delete_cmnt.length; i++) {
+        delete_cmnt[i].addEventListener('click',getConf)
+    }
+}
+
+delete_my_cmnt();
 
 
 
