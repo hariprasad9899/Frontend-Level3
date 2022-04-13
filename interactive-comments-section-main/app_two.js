@@ -122,7 +122,9 @@ function getConf(cmnt) {
     var del = document.getElementById('del');
     var button = del.getElementsByTagName('button');
     var lightbg = document.getElementById('lightbg')
+    let height_of_screen = document.body.scrollHeight;
     lightbg.style.display = "block";
+    lightbg.style.height = height_of_screen + "px";
     del.style.display = "block";
     for(const btn of button) {
         btn.addEventListener('click', () => {
