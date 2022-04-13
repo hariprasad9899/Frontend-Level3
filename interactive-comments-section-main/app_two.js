@@ -87,10 +87,9 @@ button_elem.innerText = "SEND";
 myCommentDiv.appendChild(img_elem);
 myCommentDiv.appendChild(textarea_elem);
 myCommentDiv.appendChild(button_elem);
-
+var cmnt_type = "";
 let main_func = function() {
     var cmnt_wrapper = document.getElementsByClassName('cmnt-wrapper');
-    var cmnt_type = "";
     for(let j = 0; j < cmnt_wrapper.length; j++) {
         const reply_btn = cmnt_wrapper[j].getElementsByClassName('reply-btn');
         for (let i = 0; i <reply_btn.length;i++) {
@@ -163,20 +162,30 @@ let update_my_cmnt = function() {
 
 update_my_cmnt();
 
+function show(event) {
+    let editDiv = this.parentElement.nextElementSibling.getElementsByTagName('textarea')[0];
+    editDiv.readOnly = false;
+    editDiv.style.outline = "2px solid hsl(212, 24%, 26%)";
+    let myUpdate = editDiv.parentElement.nextElementSibling.getElementsByTagName('button')[0];
+    myUpdate.style.display = "inline";
+}
 
 function edit_my_cmnt() {
     var edit_cmnt = document.getElementsByClassName('edit');
     for(let i = 0; i < edit_cmnt.length; i++) {
-        edit_cmnt[i].addEventListener('click', () => {
-            let editDiv = edit_cmnt[i].parentElement.nextElementSibling.getElementsByTagName('textarea')[0];
-            editDiv.readOnly = false;
-            editDiv.style.outline = "2px solid hsl(212, 24%, 26%)";
-            let myUpdate = editDiv.parentElement.nextElementSibling.getElementsByTagName('button')[0];
-            myUpdate.style.display = "inline";
-        })
+        edit_cmnt[i].addEventListener('click',show)
     }
 }
 
+edit_my_cmnt();
+
+function wrapper() {
+    main_func()
+    voting();
+    delete_my_cmnt();
+    edit_my_cmnt()
+    update_my_cmnt();
+}
 
 let myReplyComment = document.getElementsByClassName('reply-cmnt')[1];
 let clonedNode = myReplyComment.cloneNode(true);
@@ -198,22 +207,15 @@ for (let i = 0; i < btn_elem.length; i++) {
             name_elem.innerText = "juliusomo";
             time_elem.innerText = "1 Min ago";
             let cmnt_type = main_func();
+            console.log(cmnt_type);
             if(cmnt_type == "comment") {
                 let cmnt_wrapper = btn_elem[i].parentElement.parentElement;
                 cmnt_wrapper.appendChild(myReplyNode);
-                main_func()
-                voting();
-                delete_my_cmnt();
-                edit_my_cmnt()
-                update_my_cmnt();
+                wrapper();
             } else {
                 let cmnt_wrapper_rep = btn_elem[i].parentElement.previousElementSibling;
                 cmnt_wrapper_rep.after(myReplyNode);
-                main_func()
-                voting();
-                delete_my_cmnt();
-                edit_my_cmnt()
-                update_my_cmnt();
+                wrapper();
             }
             myCommentDiv.remove();
         }   
