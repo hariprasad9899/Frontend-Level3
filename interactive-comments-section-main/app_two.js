@@ -102,12 +102,20 @@ let main_func = function() {
                     myCommentDiv.style.width = "90%";
                     myCommentDiv.style.alignSelf = "flex-end";
                     commentDiv.after(myCommentDiv);
+                    // let scrolling_height =  cmnt_wrapper[j].scrollHeight;
+                    // window.scrollBy(0,scrolling_height)
                     cmnt_type = "replied";
                 } else {
                     let commentDiv = reply_btn[i].parentElement.parentElement;
                     myCommentDiv.style.width = "100%";
                     myCommentDiv.style.alignSelf = "flex-start";
                     commentDiv.appendChild(myCommentDiv)
+                    let scrolling_height =  cmnt_wrapper[j].offsetHeight;
+                    if(j == 0) {
+                        window.scrollBy(0,scrolling_height/50)
+                    } else {
+                        window.scrollBy(0,scrolling_height)
+                    }
                     cmnt_type = "comment";
                 }
             })
