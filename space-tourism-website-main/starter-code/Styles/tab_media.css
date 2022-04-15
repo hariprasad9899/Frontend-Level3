@@ -1,0 +1,70 @@
+@media screen and (max-width:900px) {
+    .logo {
+        width: 10%;
+    }
+    .menu {
+        width: 90%;
+    }
+}
+
+
+@media screen and (max-width:768px) {
+    html,body,main {
+        background: url(../assets/home/background-home-tablet.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .logo {
+        width: 10%;
+    }
+    .menu {
+        width: 90%;
+        background-color: transparent; 
+        backdrop-filter: blur(0px); 
+    }
+    .menu nav {
+        margin-right: 5%;
+    }
+    .menu nav a {
+        margin: 10px;
+        font-size: 0.9em;
+    }
+    .menu nav a #num {
+        display: none;
+    }
+    .top-menu .line {
+        display: none;
+    }
+    .part-one {
+        flex-direction: column;
+    }
+    .space,
+    .explore {
+        width: 100%;
+    }
+    .space .content {
+        text-align: center;
+    }
+    .space .content .seg-one {
+        font-size: 1em;
+    }
+    .space .content .seg-three {
+        padding: 0px 20px 0px 20px;
+        font-size: 0.8em;
+    }
+    .space .content .seg-two {
+        font-size: 2.8em;
+    }
+    .explore .outer {
+        width: 180px;
+        height: 180px;
+    }
+    .explore .outer .inner {
+        width: 100px;
+        height: 100px;
+    }
+    .explore .outer .inner span {
+        font-size: 1em;
+        letter-spacing: 1px;
+    }
+}
