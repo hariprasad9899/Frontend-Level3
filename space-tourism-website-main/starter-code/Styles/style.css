@@ -452,3 +452,104 @@ body {
     cursor: pointer;
     background-color: rgb(112, 108, 108);
 }
+
+/* Part Four - Tech */
+/* -------------------------------------------------------------------------------- */
+
+.tech-page {
+    background: url(../assets/technology/background-technology-desktop.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 50px;
+}
+.part-four {
+    width: 90%;
+    /* height: 70%; */
+    margin:auto;
+    margin-top: 1%;
+    margin-left: 10%;
+    /* border: 1px solid white; */
+}
+.tech {
+    width: 100%;
+    /* height: 10%; */
+    display: flex;
+    align-items: center;
+    /* background-color: lightblue ; */
+}
+.tech h2 { 
+    font-weight: 100;
+    font-size: 1.3em;
+    letter-spacing: 2px;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+.tech h2 #num {
+    color:#D0D6F9;
+    font-weight: 600;
+}
+.info {
+    width: 100%;
+    /* height: 90%; */
+    display: flex;
+    border: 1px solid white;
+}
+.number {
+    width: 20%;
+    /* height: 100%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid red; */
+}
+.terminology {
+    width: 35%;
+    /* height: 100%; */
+    display: grid;
+    /* border: 1px solid green; */
+}
+.info-pic {
+    width: 45%;
+    /* height: 100%; */
+    /* border: 1px solid blue; */
+}
+.number p {
+    font-size: 1.5em;
+    width: 60px;
+    height: 60px;
+    display: grid;
+    border-radius: 50%;
+    border: 1px solid rgb(65, 64, 64);
+    color: white;
+}
+.number p span {
+    margin: auto;   
+}
+.number .active {
+    background-color: white;
+    color: black;
+}
+.info-wrapper {
+    margin: auto;
+    margin-top: 25%;
+    padding-right: 50px;
+    /* border: 1px solid white; */
+    font-family: 'Barlow Condensed', sans-serif;
+}
+.info-wrapper p:nth-child(1) {
+    color: #D0D6F9;
+    font-size: 0.8em;
+}
+.info-wrapper p:nth-child(3) {
+    color: #D0D6F9;
+    line-height: 1.3;
+}
+.info-wrapper h1 {
+    font-weight: 100;
+    font-size: 2.2em;
+    font-family: 'Bellefair', serif;
+}
+.info-pic img {
+    width: 100%;
+    height: 100%;
+}

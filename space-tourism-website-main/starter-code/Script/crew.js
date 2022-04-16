@@ -17,11 +17,13 @@ window.onload = function() {
         let parsed_data = await json_data.json();
         return parsed_data;
     }
+    var slideIndex = 0;
     async function show() {
         let data = await getData();
         for (let i = 0; i < dot.length;i++) {
             dot[i].addEventListener('click', () => {
                 let crew_data = data["crew"];
+                slideIndex = i;
                 let crole = document.getElementById('c-role');
                 let cname = document.getElementById('c-name');
                 let cbio = document.getElementById('c-bio');
@@ -33,12 +35,12 @@ window.onload = function() {
             })
         }
 
-        var k = 0;
+      
         let timerFunc = setInterval(function(){
-            dot[k].click();
-            k++;
-            if(k > 3){
-                k = 0;
+            dot[slideIndex].click();
+            slideIndex++;
+            if(slideIndex > 3){
+                slideIndex = 0;
             }
         },4000)
         timerFunc();

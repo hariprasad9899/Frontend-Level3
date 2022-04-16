@@ -147,4 +147,28 @@
     .role {order: 2;}
     .name {order: 3;}
     .bio {order: 4; padding: 0px 10px 0px 10px;}
+
+    /* Part Four - Tech */
+    /* -------------------------------------------------------------------------------- */
+
+    .tech-page {
+        background: url(../assets/technology/background-technology-mobile.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .tech {
+        justify-content: center;
+    }
+    .info-wrapper {
+        padding: 0px 10px 0 10px;
+    }
+    .info-wrapper h1 {
+        font-size: 1.6em;
+    }
+    .info-wrapper p:nth-child(3) {
+        font-size: 0.9em;
+    }
+    .number p {
+        font-size: 1em;
+    }
 }
