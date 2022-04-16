@@ -23,7 +23,7 @@
                       <nav>
                           <a href="./index.html" class="menus"><span id="num">00 &nbsp;</span>HOME</a>
                           <a href="./destination.html" class="active menus"><span id="num">01 &nbsp;</span>DESTINATION</a>
-                          <a href="#" class="menus"><span id="num">02 &nbsp;</span>CREW</a>
+                          <a href="./crew.html" class="menus"><span id="num">02 &nbsp;</span>CREW</a>
                           <a href="#" class="menus"><span id="num">03 &nbsp;</span>TECHNOLOGY</a>
                       </nav>
                     </div>
@@ -40,22 +40,22 @@
                 </div>
                 <div class="part-content">
                     <div class="planet">
-                        <img src="./assets/destination/image-moon.png" alt="">
+                        <img id="p-img" src="./assets/destination/image-moon.png" alt="">
                     </div>
                     <div class="planet-desc">
                         <div class="planet-menus">
                             <nav>
-                                <a href="#" class="planets active">MOON</a>
-                                <a href="#" class="planets">MARS</a>
-                                <a href="#" class="planets">EUROPA</a>
-                                <a href="#" class="planets">TITAN</a>
+                                <a href="#" class="planets active" id="Moon">MOON</a>
+                                <a href="#" class="planets" id="Mars">MARS</a>
+                                <a href="#" class="planets" id="Europa">EUROPA</a>
+                                <a href="#" class="planets" id="Titan">TITAN</a>
                             </nav>
                         </div>
                         <div class="planet-name">
-                            <h1>MOON</h1>
+                            <h1 id="p-name">MOON</h1>
                         </div>
                         <div class="planet-details">
-                            <p>
+                            <p id="p-details">
                                 See our planet as you’ve never seen it before. A perfect 
                                 relaxing trip away to help regain perspective and come 
                                 back refreshed. While you’re there, take in some history 
@@ -65,11 +65,11 @@
                         <div class="planet-distance">
                             <div class="distance">
                                 <p>AVG. DISTANCE</p>
-                                <span>384,400 KM</span>
+                                <span id="p-distance">384,400 KM</span>
                             </div>
                             <div class="days">
-                                <p>EST> TRAVEL TIME</p>
-                                <span>3 DAYS</span>
+                                <p>EST. TRAVEL TIME</p>
+                                <span id="p-days">3 DAYS</span>
                             </div>
                         </div>
                     </div>
@@ -86,7 +86,7 @@
               <nav>
                   <a href="./index.html"><span id="num">00 &nbsp;</span>HOME</a>
                   <a href="./destination.html"><span id="num">01 &nbsp;</span>DESTINATION</a>
-                  <a href="#"><span id="num">02 &nbsp;</span>CREW</a>
+                  <a href="./crew.html"><span id="num">02 &nbsp;</span>CREW</a>
                   <a href="#"><span id="num">03 &nbsp;</span>TECHNOLOGY</a>
               </nav>
           </div>
@@ -95,4 +95,5 @@
     </main>
 </body>
 <script src="./Script/destination.js"></script>
+<script src="./Script/app.js"></script>
 </html>
