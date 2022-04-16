@@ -10,7 +10,6 @@ for (let elem of menus) {
     })
 }
 
-
 // adding onclick functions to show side menu
 const btn_open = document.getElementById('btn-open');
 const btn_close = document.getElementById('btn-close');
@@ -39,4 +38,6 @@ inner.addEventListener('mouseleave', () => {
     const outer = document.getElementsByClassName('outer')[0];
     outer.classList.remove('animate')
 })
+
+
 
