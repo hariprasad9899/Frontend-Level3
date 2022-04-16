@@ -73,6 +73,9 @@
     .side-menu-options nav a #num {
         font-weight: 600;
     }
+    .part-one {
+        margin-top: 5%;
+    }
     .space .content {
         width: 100%;
     }

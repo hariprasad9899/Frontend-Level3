@@ -25,3 +25,18 @@ btn_close.onclick = function() {
     side_menu.style.visibility = 'hidden';
     document.body.classList.remove('stop-scrolling');
 }
+
+// explore background animation 
+function animate_explore() {
+    const outer = document.getElementsByClassName('outer')[0];
+    outer.classList.add('animate')
+}
+const inner = document.getElementsByClassName('inner')[0];
+const explore = document.getElementById('explore');
+inner.addEventListener('mouseover', animate_explore)
+explore.addEventListener('mouseover',animate_explore)
+inner.addEventListener('mouseleave', () => {
+    const outer = document.getElementsByClassName('outer')[0];
+    outer.classList.remove('animate')
+})
+
