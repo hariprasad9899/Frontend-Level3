@@ -529,6 +529,11 @@ body {
     background-color: white;
     color: black;
 }
+.number p:hover {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}
 .info-wrapper {
     margin: auto;
     margin-top: 25%;
@@ -551,5 +556,6 @@ body {
 }
 .info-pic img {
     width: 100%;
+    /* object-fit: contain; */
     height: 100%;
 }
