@@ -87,6 +87,7 @@
         letter-spacing: 1px;
     }
     /* Part Two - Destination */
+    /* -------------------------------------------------------------------------------- */
 
     .destination-page {
         background: url(../assets/destination/background-destination-mobile.jpg);
@@ -113,5 +114,37 @@
     .planet-distance .days {
         width: 100%;
     } 
+
+    /* Part Three - Crew */
+    /* -------------------------------------------------------------------------------- */
     
+    .crew-page {
+        background: url(../assets/crew/background-crew-mobile.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .crew {text-align: center;}
+    .crew h2 {
+        font-size: 0.9em;
+    }
+    .crew-details {
+        order: 2;
+    }
+    .crew-member {
+        order: 1;
+        border-bottom: 1px solid rgb(79, 77, 77);
+    }
+    .role h2 {
+        font-size: 0.9em;
+    }
+    .name h1 {
+        font-size: 1.4em;
+    }
+    .bio p {
+        font-size: 0.8em;
+    }
+    .dots {order: 1;}
+    .role {order: 2;}
+    .name {order: 3;}
+    .bio {order: 4; padding: 0px 10px 0px 10px;}
 }
