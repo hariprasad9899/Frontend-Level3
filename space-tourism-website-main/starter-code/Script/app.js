@@ -33,6 +33,9 @@ function animate_explore() {
 const inner = document.getElementsByClassName('inner')[0];
 const explore = document.getElementById('explore');
 inner.addEventListener('mouseover', animate_explore)
+inner.onclick = function() {
+    window.open('./destination.html','_self')
+}
 explore.addEventListener('mouseover',animate_explore)
 inner.addEventListener('mouseleave', () => {
     const outer = document.getElementsByClassName('outer')[0];
