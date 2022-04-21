@@ -1,0 +1,68 @@
+@media screen and (max-width:750px) {
+    .container {
+        width: 100%;
+    }
+    .logo img {
+        width: 100px;
+    }
+    .menus {
+        flex-grow: 4;
+    }
+    .menus nav a {
+        margin: 5px;
+        font-size: 0.7em;
+    }
+    
+}
+
+@media screen and (max-width:650px) {
+    .logo img {
+        width: 100px;
+    }
+    .menus {
+        display: none;
+    }
+    .menus nav a {
+        margin: 5px;
+        font-size: 0.7em;
+    }
+    .cart,.user {
+        flex-basis: 10px;
+        flex-grow: 3    ;
+    }
+    .hamburger {
+        display: flex;
+        justify-content: center;
+        flex-grow: 1;
+    }
+    .logo {
+        flex-grow: 6;
+    }
+    .logo img {
+        width: 130px;
+    }
+    .user img {
+        width: 30px;
+    }
+    .user img:hover {
+        width: 34px;
+    }
+    .part-two {
+        flex-direction: column;
+    }
+    .mob-img-flex,
+    .product-details {
+        width: 100%;
+    }
+    .mob-img-flex {display: block;}
+    .img-flex {display: none;}
+    .product-details .inner-content {width: 95%;}
+    .brand-price {
+        flex-direction: row;
+        gap: 10px;
+    }
+    .old-price p {
+        margin-top: 20px;   
+    }
+
+}

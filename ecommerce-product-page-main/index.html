@@ -2,43 +2,113 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="./Style/style.css">
+  <link rel="stylesheet" href="./Style/media.css">
+  <link rel="stylesheet" href="./Script/app.js">
   <title>Frontend Mentor | E-commerce product page</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
+    <main>
+        <div class="container">
+            <div class="top-menu">
+                <div class="hamburger">
+                    <img src="./images/icon-menu.svg" alt="">
+                </div>
+                <div class="logo">
+                    <img src="./images/logo.svg" alt="">
+                </div>
+                <div class="menus">
+                    <nav>
+                        <a href="#">Collections</a>
+                        <a href="#">Men</a>
+                        <a href="#">Women</a>
+                        <a href="#">About</a>
+                        <a href="#">Contact</a>
+                    </nav>
+                </div>
+                <div class="cart">
+                    <img src="./images/icon-cart.svg" alt="">
+                    <span class="quan">1</span>
+                </div>
+                <div class="user">
+                    <img src="./images/image-avatar.png" alt="">
+                </div>
+            </div>
 
-  Collections
-  Men
-  Women
-  About
-  Contact
-
-  Sneaker Company
-
-  Fall Limited Edition Sneakers
-
-  These low-profile sneakers are your perfect casual wear companion. Featuring a 
-  durable rubber outer sole, they’ll withstand everything the weather can offer.
-
-  $125.00
-  50%
-  $250.00
-
-  0
-  Add to cart
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+            <div class="part-two">
+                <div class="img-flex">
+                    <div class="img-container">
+                        <div class="main-img">
+                            <img id="flex-img" src="./images/image-product-1.jpg" alt="">
+                        </div>
+                        <div class="img-thumbnails">
+                            <div class="box active">
+                                <img src="./images/image-product-1-thumbnail.jpg" alt="">
+                            </div>
+                            <div class="box">
+                                <img src="./images/image-product-2-thumbnail.jpg" alt="">
+                            </div>
+                            <div class="box">
+                                <img src="./images/image-product-3-thumbnail.jpg" alt="">
+                            </div>
+                            <div class="box">
+                                <img src="./images/image-product-4-thumbnail.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mob-img-flex"></div>
+                <div class="product-details">
+                    <div class="inner-content">
+                        <div class="title">
+                            <h4>SNEAKER COMPANY</h4>
+                        </div>
+                        <div class="brand-name">
+                            <h2>
+                                Fall Limited Edition Sneakers
+                            </h2>
+                        </div>
+                        <div class="brand-desc">
+                            <p>
+                                These low-profile sneakers are your perfect casual wear companion. Featuring a 
+                                durable rubber outer sole, they’ll withstand everything the weather can offer.
+                            </p>
+                        </div>
+                        <div class="brand-price">
+                            <div class="offer-price">
+                                <p>
+                                    <span>$125.00</span>
+                                </p>
+                                <p>
+                                    <span>50%</span>
+                                </p>
+                            </div>
+                            <div class="old-price">
+                                <p><s>$250.00</s></p>
+                            </div>
+                        </div>
+                        <div class="add-cart">
+                            <div class="counter">
+                                <span class="eval sub"><img src="./images/icon-minus.svg" alt="plus"></span>
+                                <span>0</span>
+                                <span class="eval add"><img src="./images/icon-plus.svg" alt="minus"></span>
+                            </div>
+                            <div class="add-btn">
+                                <button>
+                                    <img src="./images/icon-cart-white.svg" alt="">
+                                    &nbsp;
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
+<script src="./Script/app.js"></script>
 </html>
