@@ -9,6 +9,7 @@ html,body,main {
     /* height: 100%; */
     margin: 0;
     padding: 0;
+    position: relative;
     font-family: 'Kumbh Sans', sans-serif;
 }
 .container {
@@ -113,7 +114,7 @@ html,body,main {
 .img-flex,
 .mob-img-flex,
 .product-details {
-    height: 100%;
+    /* height: 100%; */
     width: 50%;
 }
 .mob-img-flex { 
@@ -293,4 +294,49 @@ html,body,main {
     border-radius: 15px;
     background-color: hsl(26, 100%, 55%);
     font-family: 'Kumbh Sans', sans-serif;
+}
+.mob-img-flex {
+    display: none;
+    width: 100%;
+    /* height: 100%; */
+    position: relative;
+}
+.img-holder {
+    width: 100%;
+    /* height: 100%; */
+}
+.img-holder img {
+    width: 100%;
+    /* height: 100%; */
+}
+.toggle-btn {
+    position: absolute;
+    width: 100%;
+    /* height: 20%; */
+    top: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70%;
+    background-color: transparent;
+}
+.toggle-btn span {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: grid;
+    background-color: white;
+}
+.toggle-btn span img {
+    margin: auto;
+}
+.lightbox {
+    position: absolute;
+    width: 35%;
+    height: 350px;
+    top: 50%;
+    border-radius: 10px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
 }

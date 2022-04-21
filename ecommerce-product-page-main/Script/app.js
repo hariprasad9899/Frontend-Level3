@@ -5,16 +5,6 @@ let box = document.getElementsByClassName('box');
 let flex_img = document.getElementById('flex-img');
 
 
-// for (let x in box) {
-//     box[x].addEventListener('click', () => {
-//         flex_img.src = img_array[x];
-//         // for (let y in box) {
-//         //     box[y].classList.remove('active');
-//         // }
-//         // box[x].classList.add('active');
-//     },false)
-// }
-
 for (let i = 0; i < box.length; i++) {
     box[i].addEventListener('click', () => {
         flex_img.src = img_array[i];
@@ -48,3 +38,26 @@ let counting = function() {
         }
     }
 counting();
+
+
+let change = document.getElementsByClassName('change');
+let img_box = document.getElementById('img-box');
+
+for (let i = 0; i < change.length;i++) {
+    var slideIndex = 0;
+    change[i].addEventListener('click', () => {
+        if(change[i].classList.contains('next')) {
+            slideIndex += 1;
+            if (slideIndex > 3) {
+                slideIndex = 0;
+            }
+        } else if (change[i].classList.contains('prev')) {
+            slideIndex -= 1;
+            if (slideIndex < 0) {
+                slideIndex = 3;
+            }
+        }
+        img_box.src = img_array[slideIndex];
+    })
+}
+

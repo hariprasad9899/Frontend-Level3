@@ -64,5 +64,7 @@
     .old-price p {
         margin-top: 20px;   
     }
-
+    .product-details {
+        height: 50%;
+    }
 }
