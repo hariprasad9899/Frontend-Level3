@@ -14,7 +14,10 @@ html,body,main {
     color: #FFFFFF;
     font-family: 'Barlow Condensed', sans-serif;
     font-family: 'Bellefair', serif;
-    
+}
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
 }
 body {
     background: url(../assets/home/background-home-desktop.jpg);

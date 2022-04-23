@@ -152,3 +152,24 @@ del.onclick = function() {
         cart_details.style.display = "none";
     },2000)
 }
+
+
+const btn_open = document.getElementById('btn-open');
+const btn_close = document.getElementById('btn-close');
+const side_menu = document.getElementsByClassName('mob-menu')[0];
+btn_open.onclick = function() {
+    side_menu.style.left = "0px";
+    document.body.classList.add('stop-scrolling');
+}
+btn_close.onclick = function() {
+    side_menu.style.left = "-380px";
+    document.body.classList.remove('stop-scrolling');
+}
+
+const closeMenu = document.getElementsByClassName('closeMenu');
+
+for(let i = 0; i < closeMenu.length; i++) {
+    closeMenu[i].addEventListener('click', () => {
+        side_menu.style.left = "0px";
+    })
+}
