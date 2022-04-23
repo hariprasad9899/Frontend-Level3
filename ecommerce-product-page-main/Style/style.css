@@ -111,6 +111,7 @@ html,body,main {
     height: 80%;
     display: flex;
     position: relative;
+    padding-bottom: 30px;
 }
 
 .mob-img-flex,
