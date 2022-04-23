@@ -102,21 +102,30 @@ flex_img.onclick = function() {
 
 const cart = document.getElementsByClassName('cart')[0];
 const cart_details = document.getElementsByClassName('cart-details')[0];
+const checkout = document.getElementById('checkout-btn');
+const quan = document.getElementById('quan');
+const quanCart = document.getElementById('quanCart');
+const val = document.getElementById('val');
+const del = document.getElementById('del');
+const info = document.getElementsByClassName('info')[0];
+const nocart = document.getElementsByClassName('nocart')[0];
 
 
 cart.onclick = function() {
     cart_details.style.display = "flex";
+    if(info.style.display == "" || info.style.display == "none") {
+        setTimeout(() => {
+            cart_details.style.display = "none";
+        },2000)
+    }
 }
-const checkout = document.getElementById('checkout-btn');
+
 checkout.onclick = function() {
     cart_details.style.display = "none";
 }
 
 const addCart = document.getElementById('addCart');
 
-const quan = document.getElementById('quan');
-const quanCart = document.getElementById('quanCart');
-const val = document.getElementById('val');
 
 addCart.onclick = function() {
     const qValue = document.getElementById('qValue').innerText;
@@ -133,9 +142,7 @@ addCart.onclick = function() {
     }
 }
 
-const del = document.getElementById('del');
-const info = document.getElementsByClassName('info')[0];
-const nocart = document.getElementsByClassName('nocart')[0];
+
 del.onclick = function() {
     info.style.display = 'none';
     nocart.style.display = "block";

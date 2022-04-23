@@ -6,7 +6,6 @@
 }
 html,body,main {
     width: 100%;
-    /* height: 100%; */
     margin: 0;
     padding: 0;
     position: relative;
@@ -25,7 +24,6 @@ html,body,main {
     max-height: 60px;
     display: flex;
     border-bottom: 1px solid hsl(220, 14%, 75%);
-    /* border: 1px solid black; */
 }
 .logo , 
 .menus, 
@@ -38,19 +36,15 @@ html,body,main {
 }
 .logo {
     flex-grow: 1;
-    /* background-color: lightcoral; */
 }
 .menus {
     flex-grow: 5;
-    /* background-color: lightgoldenrodyellow; */
 }
 .cart {
     flex-grow: 1;
-    /* background-color: lightgrey; */
 }
 .user {
     flex-grow: 1;
-    /* background-color: lightpink; */
 }
 .menus nav a {
     color: hsl(220, 14%, 75%);
@@ -85,6 +79,9 @@ html,body,main {
 .cart {
     position: relative;
 }
+.cart img:hover{
+    cursor: pointer;
+}
 .quan {
     position: absolute;
     padding: 5px;
@@ -108,29 +105,25 @@ html,body,main {
 .part-two {
     width: 100%;
     height: 80%;
-    /* border: 1px solid black; */
     display: flex;
     position: relative;
 }
-.img-flex,
+
 .mob-img-flex,
 .product-details {
-    /* height: 100%; */
-    width: 50%;
+    width: 55%;
 }
 .mob-img-flex { 
     display: none;
-    /* border: 1px solid blue; */
 }
 .img-flex {
+    width: 45%;
     display: grid;
-    /* border: 1px solid green; */
 }
 .product-details {
     display: flex;
     justify-content: center;
     align-self: center;
-    /* border: 1px solid red; */
 }
 .img-flex  .img-container {
     margin: auto;
@@ -139,12 +132,10 @@ html,body,main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* border: 1px solid lightcoral; */
 }
 .img-container .main-img {
     width: 100%;
     height: 70%;
-    /* border: 1px solid palevioletred */
 }
 .img-container .main-img img {
     width: 100%;
@@ -159,12 +150,10 @@ html,body,main {
     height: 20%;
     display: flex;
     justify-content: space-between;
-    /* border: 1px solid yellow; */
 }
 .img-thumbnails .box {
     width: 23%;
     height: 100%;
-    /* border: 1px solid black; */
 }
 .box  img {
     width: 100%;
@@ -188,33 +177,28 @@ html,body,main {
     margin: auto;
     display: flex;
     flex-direction: column;
-    /* background-color: lightblue; */
 }
-.title {
-    /* border: 1px solid red; */
-}
+
 .title h4 {
     font-size: 0.8em;
     color: hsl(26, 100%, 55%);
 }
 .brand-name {
     padding-right: 50px;
-    /* border: 1px solid green; */
 }
 .brand-name h2 {
     font-size: 2.2em;
     color: hsl(220, 13%, 13%);
+    margin-top: -5px;
 }
-.brand-desc {
-    /* border: 1px solid black; */
-}
+
 .brand-desc p {
     color: hsl(219, 9%, 45%);
     font-size: 1em;
     line-height: 1.5;
+    margin-top: -10px;
 }
 .brand-price {
-    /* border: 1px solid blue; */
     display: flex;
     flex-direction: column;
 }
@@ -228,7 +212,6 @@ html,body,main {
     justify-content: left;
     align-items: center;
     padding: 0px 8px 0px 0px;
-    /* border: 1px solid black; */
 }
 .offer-price p:nth-child(1) span {
     font-size: 1.6em;
@@ -249,15 +232,12 @@ html,body,main {
     font-weight: 600;
     color: hsl(26, 100%, 55%);
 }
-.old-price {
-    /* border: 1px solid red; */
-}
+
 .old-price p {
    margin-top: 2px;
 }
 .add-cart {
     width: 100%;
-    /* height: 70px; */
     display: flex;
     gap: 10px;
     align-items: center;
@@ -284,9 +264,13 @@ html,body,main {
 .counter span:nth-child(3):hover {
     cursor: pointer;
 }
+.counter span:nth-child(1) img,
+.counter span:nth-child(3) img {
+    user-select: none;
+}
+
 .add-btn {
     width: 65%;
-    /* height: 100%; */
 }
 .add-btn button {
     width: 100%;
@@ -303,21 +287,17 @@ html,body,main {
 .mob-img-flex {
     display: none;
     width: 100%;
-    /* height: 100%; */
     position: relative;
 }
 .img-holder {
     width: 100%;
-    /* height: 100%; */
 }
 .img-holder img {
     width: 100%;
-    /* height: 100%; */
 }
 .toggle-btn {
     position: absolute;
     width: 100%;
-    /* height: 20%; */
     top: 45%;
     display: flex;
     align-items: center;
@@ -351,7 +331,6 @@ html,body,main {
     -ms-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
-    /* background-color: white; */
 }
 .model-img {
     width: 100%;
@@ -437,7 +416,7 @@ html,body,main {
     box-shadow: 5px 10px 10px 5px rgba(190, 190, 190, 0.726);
 }
 .cart-details .info {
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 10px;
 }
@@ -458,7 +437,6 @@ html,body,main {
     margin-top: 10px;
     display: flex;
     align-items: center;
-    /* border: 1px solid green; */
 }
 .added-img,
 .delete {
@@ -521,7 +499,7 @@ html,body,main {
 .nocart {
     width: 100%;    
     height: 100%;
-    display: none;
+    display: block;
     text-align: center;
 }
 .nocart p {
