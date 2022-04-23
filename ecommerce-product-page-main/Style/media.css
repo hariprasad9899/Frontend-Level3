@@ -70,4 +70,12 @@
     .lightbox {
         display: none;
     }
+    .cart-details {
+        position: absolute;
+        width: 80%;
+        left: 50%;
+        right: 50%;
+        transform: translate(-50%,20%);
+        box-shadow: none;
+    }
 }

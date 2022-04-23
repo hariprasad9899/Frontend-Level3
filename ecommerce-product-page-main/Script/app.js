@@ -98,3 +98,50 @@ flex_img.onclick = function() {
     lightbg.style.height = height_of_screen + "px";
 }
 
+
+
+const cart = document.getElementsByClassName('cart')[0];
+const cart_details = document.getElementsByClassName('cart-details')[0];
+
+
+cart.onclick = function() {
+    cart_details.style.display = "flex";
+}
+const checkout = document.getElementById('checkout-btn');
+checkout.onclick = function() {
+    cart_details.style.display = "none";
+}
+
+const addCart = document.getElementById('addCart');
+
+const quan = document.getElementById('quan');
+const quanCart = document.getElementById('quanCart');
+const val = document.getElementById('val');
+
+addCart.onclick = function() {
+    const qValue = document.getElementById('qValue').innerText;
+    if(qValue > 0) {
+        info.style.display = 'flex';
+        nocart.style.display = "none";
+        quan.style.backgroundColor = "hsl(26, 100%, 55%)";
+        quan.innerText = qValue;
+        quanCart.innerText = qValue;
+        val.innerText = 125 * qValue;
+    }
+    else {
+        alert("Please add some quantity")
+    }
+}
+
+const del = document.getElementById('del');
+const info = document.getElementsByClassName('info')[0];
+const nocart = document.getElementsByClassName('nocart')[0];
+del.onclick = function() {
+    info.style.display = 'none';
+    nocart.style.display = "block";
+    quan.innerText = "";
+    quan.style.backgroundColor = "transparent";
+    setTimeout(() => {
+        cart_details.style.display = "none";
+    },2000)
+}
