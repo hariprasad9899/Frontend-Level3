@@ -61,3 +61,40 @@ for (let i = 0; i < change.length;i++) {
     })
 }
 
+let switch_img = document.getElementsByClassName('switch');
+let lightbox_img = document.getElementById('lightbox-img');
+for (let i = 0; i < switch_img.length;i++) {
+    var slideIndex = 0;
+    switch_img[i].addEventListener('click', () => {
+        if(switch_img[i].classList.contains('next')) {
+            slideIndex += 1;
+            if (slideIndex > 3) {
+                slideIndex = 0;
+            }
+        } else if (switch_img[i].classList.contains('prev')) {
+            slideIndex -= 1;
+            if (slideIndex < 0) {
+                slideIndex = 3;
+            }
+        }
+        lightbox_img.src = img_array[slideIndex];
+    })
+}
+
+
+
+var height_of_screen = screen.height;
+const lightbg = document.getElementById('lightbg')
+const close_btn = document.getElementById('close');
+const lightbox  = document.getElementsByClassName('lightbox')[0];
+close_btn.onclick = function() {
+    lightbox.classList.remove('show');
+    lightbg.style.display = "none";
+}
+
+flex_img.onclick = function() {
+    lightbox.classList.add('show');
+    lightbg.style.display = "block";
+    lightbg.style.height = height_of_screen + "px";
+}
+

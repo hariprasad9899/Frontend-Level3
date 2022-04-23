@@ -150,6 +150,9 @@ html,body,main {
     height: 100%;
     border-radius: 15px;
 }
+.main-img img:hover {
+    cursor: pointer;
+}
 .img-container .img-thumbnails {
     width: 100%;
     height: 20%;
@@ -167,6 +170,7 @@ html,body,main {
     height: 100%;
     border-radius: 10px;
 }
+
 .img-thumbnails .active {
     opacity: 0.7;
 }
@@ -332,11 +336,87 @@ html,body,main {
 }
 .lightbox {
     position: absolute;
-    width: 35%;
-    height: 350px;
+    width: 400px;
+    height: 500px;
     top: 50%;
     border-radius: 10px;
     left: 50%;
+    display: none;
+    position: fixed;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
+    /* background-color: white; */
+}
+.model-img {
+    width: 100%;
+    height: 80%;
+}
+.model-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+.close-btn {
+    align-self: flex-end;
+}
+.close-btn img {
+    width: 20px;
+}
+.close-btn img:hover {
+    cursor: pointer;
+}
+.change-btns {
+    position: absolute;
+    width: 120%;
+    top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 75%;
+    background-color: transparent;
+}
+.change-btns span {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: grid;
     background-color: white;
+}
+.change-btns span img {
+    margin: auto;
+    user-select: none;
+}
+.change-btns span img:hover {
+    cursor: pointer;
+}
+.show {
+    display: flex;
+    width: 400px;
+    height: 500px;
+    z-index: 6;
+    top: 50%;
+    border-radius: 10px;
+    left: 50%;
+    animation-name: anime;
+    animation-duration: 0.7s;
+}
+@keyframes anime {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+#lightbg {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.368);
 }

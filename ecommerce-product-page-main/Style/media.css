@@ -67,4 +67,7 @@
     .product-details {
         height: 50%;
     }
+    .lightbox {
+        display: none;
+    }
 }
