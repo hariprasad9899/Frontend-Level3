@@ -6,23 +6,25 @@
 }
 html,body,main {
     width: 100%;
-    /* height: 100%; */
+    height: 100%;
     padding: 0;
     margin: 0;
-    color: white;
-    background-color:  hsl(225, 21%, 49%);
     font-family: 'League Spartan', sans-serif;
 }
 main {
-    position: relative;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    color: white;
 }
 .container {
-    position: absolute;
+    /* position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,15%);
+    transform: translate(-50%,15%); */
     width: 450px;
     /* height: 70%; */
+    margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -38,7 +40,7 @@ main {
 }
 .calc-value {
     width: 100%;
-    height: 18%;
+    height: 20%;
     /* background-color: lightcoral; */
 }
 .input-elems {
@@ -58,6 +60,7 @@ main {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+    /* background-color: lightblue; */
 }
 .theme p {
     margin-bottom: 2px;
@@ -81,6 +84,12 @@ main {
 .theme-nums small {
     margin: 5px;
 }
+.theme-nums .active {
+    font-size: 0.9em;
+}
+.theme-nums small:hover {
+    cursor: pointer;
+}
 .bar {
     width: 100%;
     /* height: 70%; */
@@ -95,39 +104,45 @@ main {
     border-radius: 18px;
     background-color: hsl(224, 36%, 15%);
 }
+.bar .pipe:hover {cursor: pointer;}
 .pipe .ball {
     position: absolute;
     height: 15px;
     width: 15px;
     border-radius: 50%;
-    background-color: hsl(6, 63%, 50%);
     top: 4px;
-    left: 6px;
+    transition: 0.3s ease;
 }
+
+.pipe .one {left: 5px; background-color: hsl(6, 63%, 50%);}
+.pipe .two {left: 18px; background-color: hsl(25, 98%, 40%);}
+.pipe .three {left: 34px; background-color: hsl(176, 100%, 44%); }
+
 
 .calc-value .textbox {
     width: 100%;
     height: 100%;
     border: none;
     outline: none;
-    border-radius: 15px;
+    border-radius: 5px;
     text-align: right;
     font-size: 3em;
     font-weight: 700;
-    padding: 20px 15px 20px 0px;
+    padding: 35px 15px 35px 0px;
     color: white;
     font-family: 'League Spartan', sans-serif;
     background-color: hsl(224, 36%, 15%);
 }
 
 .input-elems {
-    padding: 10px 5px 10px 10px;
+    padding: 30px 5px 30px 10px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-row-gap: 10px;
     align-items: center;
     justify-content: center;
+    border-radius: 5px;
 }
 .input-elems input {
     width: 70%;
@@ -171,3 +186,38 @@ main {
     font-size: 1.6em;
     border-bottom: 4px solid  hsl(6, 70%, 34%);
 }
+
+/* Theme Changer */
+
+body.theme-one { background-color: hsl(222, 26%, 31%); }
+body.theme-two { background-color: hsl(0, 0%, 90%); }
+body.theme-three { background-color: hsl(268, 75%, 9%); }
+
+.name .theme-one, .toggler .theme-one, .theme-text .theme-one  { color: hsl(0, 0, 100%);}
+.name .theme-two, .toggler .theme-two, .theme-text .theme-two   { color: hsl(60, 10%, 19%);}
+.name .theme-three, .toggler .theme-three , .theme-text .theme-three  { color: hsl(52, 100%, 62%);}
+
+.bar .theme-one {background-color: hsl(223, 31%, 20%);}
+.bar .theme-two {background-color: hsl(0, 5%, 81%);}
+.bar .theme-three {background-color:  hsl(268, 71%, 12%);}
+
+.calc-value .theme-one { background-color: hsl(224, 36%, 15%); color:  hsl(0, 0, 100%);}
+.calc-value .theme-two { background-color:  hsl(0, 0%, 93%); color: hsl(60, 10%, 19%);}
+.calc-value .theme-three { background-color: hsl(268, 71%, 12%); color: hsl(52, 100%, 62%);}
+
+
+.container .keypad-theme-one { background-color: hsl(223, 31%, 20%);}
+.container .keypad-theme-two { background-color: hsl(0, 5%, 81%);}
+.container .keypad-theme-three { background-color: hsl(268, 71%, 12%);}
+
+.input-elems .theme-one {background-color: hsl(30, 25%, 89%);border-bottom: 4px solid hsl(28, 16%, 65%);color: hsl(225, 21%, 49%);}
+.input-elems .theme-two {background-color: hsl(45, 7%, 89%);border-bottom: 4px solid hsl(35, 11%, 61%);color: hsl(60, 10%, 19%);}
+.input-elems .theme-three {background-color: hsl(268, 47%, 21%);border-bottom: 4px solid hsl(290, 70%, 36%);color: hsl(52, 100%, 62%);}
+
+.input-elems .clear-theme-one {background-color: hsl(225, 21%, 49%);border-bottom: 4px solid hsl(224, 28%, 35%);}
+.input-elems .clear-theme-two {background-color: hsl(185, 42%, 37%);border-bottom: 4px solid  hsl(185, 58%, 25%);}
+.input-elems .clear-theme-three {background-color: hsl(281, 89%, 26%);border-bottom: 4px solid hsl(285, 91%, 52%);}
+
+.input-elems .eq-theme-one {background-color: hsl(6, 63%, 50%);border-bottom: 4px solid  hsl(6, 70%, 34%);}
+.input-elems .eq-theme-two {background-color: hsl(25, 98%, 40%);border-bottom: 4px solid  hsl(25, 99%, 27%);}
+.input-elems .eq-theme-three {background-color: hsl(176, 100%, 44%);border-bottom: 4px solid  hsl(177, 92%, 70%); color: hsl(268, 47%, 21%);}

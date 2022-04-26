@@ -8,55 +8,56 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="media.css">
 </head>
-<body>
+<body class="theme-one set-one pack">
     <main>
         <div class="container">
             <div class="top-elem">
                 <div class="name">
-                    <h1>calc</h1>
+                    <h1 class="theme-one set-one pack">calc</h1>
                 </div>
                 <div class="theme">
                     <div class="theme-text">
-                        <p>THEME</p>
+                        <p class="theme-one set-one pack">THEME</p>
                     </div>
                     <div class="toggler">
-                        <div class="theme-nums">
-                            <small>1</small>
-                            <small>2</small>
-                            <small>3</small>
+                        <div class="theme-nums theme-one set-one pack">
+                            <small class="active nums" id="one">1</small>
+                            <small class="nums" id="two">2</small>
+                            <small class="nums" id="three">3</small>
                         </div>
                         <div class="bar">
-                            <span class="pipe">
-                                <span class="ball"></span>
+                            <span class="pipe theme-one set-one pack" id="pipe">
+                                <span class="ball one"></span>
                             </span>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="calc-value">
-                <input id="inp" class="textbox" type="text">
+                <input id="inp" class="textbox theme-one set-one pack" type="text">
             </div>
-            <div class="input-elems">
-                    <input type="submit" name="" id="" value="7">
-                    <input type="submit" name="" id="" value="8">
-                    <input type="submit" name="" id="" value="9">
-                    <input type="submit" class="clear" id="" value="DEL">
-                    <input type="submit" name="" id="" value="4">
-                    <input type="submit" name="" id="" value="5">
-                    <input type="submit" name="" id="" value="6">
-                    <input type="submit" name="" id="" value="+">
-                    <input type="submit" name="" id="" value="1">
-                    <input type="submit" name="" id="" value="2">
-                    <input type="submit" name="" id="" value="3">
-                    <input type="submit" name="" id="" value="-">
-                    <input type="submit" name="" id="" value=".">
-                    <input type="submit" name="" id="" value="0">
-                    <input type="submit" name="" id="" value="/">
-                    <input type="submit" name="" id="" value="x">
-                    <input type="submit" class="clear" id="" value="RESET">
-                    <input type="submit" class="equal" name="" id="" value="=">
+            <div class="input-elems keypad-theme-one set-two pack">
+                    <input class="theme-one set-one pack" type="submit" name="" id="" value="7">
+                    <input class="theme-one set-one pack" type="submit" name="" id="" value="8">
+                    <input class="theme-one set-one pack" type="submit" name="" id="" value="9">
+                    <input class="clear clear-theme-one set-three pack" type="submit" id="" value="DEL">
+                    <input class="theme-one set-one pack" type="submit" name="" id="" value="4">
+                    <input class="theme-one set-one pack" type="submit" name="" id="" value="5">
+                    <input class="theme-one set-one pack" type="submit" name="" id="" value="6">
+                    <input class="theme-one set-one pack" type="submit" name="" id="" value="+">
+                    <input class="theme-one set-one pack" type="submit" name="" id="" value="1">
+                    <input class="theme-one set-one pack" type="submit" name="" id="" value="2">
+                    <input class="theme-one set-one pack" type="submit" name="" id="" value="3">
+                    <input class="theme-one set-one pack" type="submit" name="" id="" value="-">
+                    <input class="theme-one set-one pack" type="submit" name="" id="" value=".">
+                    <input class="theme-one set-one pack" type="submit" name="" id="" value="0">
+                    <input class="theme-one set-one pack" type="submit" name="" id="" value="/">
+                    <input class="theme-one set-one pack" type="submit" name="" id="" value="x">
+                    <input class="clear clear-theme-one set-three pack" type="submit" id="" value="RESET">
+                    <input class="equal eq-theme-one set-four pack" type="submit" name="" id="" value="=">
             </div>
         </div>
     </main>
 </body>
+<script src="app.js"></script>
 </html>
