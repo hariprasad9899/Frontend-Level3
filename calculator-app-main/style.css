@@ -189,6 +189,8 @@ main {
 
 /* Theme Changer */
 
+
+
 body.theme-one { background-color: hsl(222, 26%, 31%); }
 body.theme-two { background-color: hsl(0, 0%, 90%); }
 body.theme-three { background-color: hsl(268, 75%, 9%); }
@@ -221,3 +223,5 @@ body.theme-three { background-color: hsl(268, 75%, 9%); }
 .input-elems .eq-theme-one {background-color: hsl(6, 63%, 50%);border-bottom: 4px solid  hsl(6, 70%, 34%);}
 .input-elems .eq-theme-two {background-color: hsl(25, 98%, 40%);border-bottom: 4px solid  hsl(25, 99%, 27%);}
 .input-elems .eq-theme-three {background-color: hsl(176, 100%, 44%);border-bottom: 4px solid  hsl(177, 92%, 70%); color: hsl(268, 47%, 21%);}
+
+.pack { transition: 0.6s ease;}
