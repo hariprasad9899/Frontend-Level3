@@ -69,3 +69,54 @@ pipe.onclick = function() {
     nums[moveCounter].click();
     moveCounter++;
 }
+
+// Calculation Part
+
+
+const elems = document.getElementsByClassName('input-elems')[0];
+const inp_elems = elems.getElementsByClassName('set-one');
+const textbox = document.getElementById('textbox')
+const equal_to = document.getElementsByClassName('equal')[0];
+const clear = document.getElementById('clear');
+const del = document.getElementById('del');
+
+let expression = "";
+for(let eachItem of inp_elems) {  
+    eachItem.onclick = function() {
+        textbox.value += eachItem.value;
+        expression += eachItem.value;
+    }
+}
+
+equal_to.addEventListener('click',() => {
+    let inp_exp = expression.replaceAll('x','*');
+    let result = eval(inp_exp);
+    textbox.value = result;
+})
+
+clear.addEventListener('click', () => {
+    textbox.value = "";
+    expression = "";
+})
+
+del.addEventListener('click',() => {
+    console.log(textbox.value)
+})
+
+
+// function display(val){
+//     document.getElementById('textbox').value += val
+//     return val
+// }
+
+// function solve(){
+//     let x = document.getElementById('textbox').value;
+//     let y = eval(x);
+//     document.getElementById('textbox').value = y
+//     return y
+// }
+
+// function clear(){
+//     // document.getElementById('textbox').value = '';
+//     alert("L")
+// }
