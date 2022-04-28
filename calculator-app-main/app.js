@@ -73,11 +73,7 @@ pipe.onclick = function() {
 // Calculation Part
 
 
-const elems = document.getElementsByClassName('input-elems')[0];
-const inp_elems = elems.getElementsByClassName('set-one');
 const textbox = document.getElementById('textbox')
-const equal_to = document.getElementsByClassName('equal')[0];
-const clear = document.getElementById('clear');
 
 
 function display(val){
