@@ -25,6 +25,7 @@ main {
     width: 450px;
     /* height: 70%; */
     margin: auto;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;

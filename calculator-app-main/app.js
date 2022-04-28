@@ -78,45 +78,26 @@ const inp_elems = elems.getElementsByClassName('set-one');
 const textbox = document.getElementById('textbox')
 const equal_to = document.getElementsByClassName('equal')[0];
 const clear = document.getElementById('clear');
-const del = document.getElementById('del');
 
-let expression = "";
-for(let eachItem of inp_elems) {  
-    eachItem.onclick = function() {
-        textbox.value += eachItem.value;
-        expression += eachItem.value;
-    }
+
+function display(val){
+    let y = textbox.value.replace(/,/g,'');
+    textbox.value = y;
+    textbox.value += val;
+    return textbox.value;
 }
 
-equal_to.addEventListener('click',() => {
-    let inp_exp = expression.replaceAll('x','*');
-    let result = eval(inp_exp);
-    textbox.value = result;
-})
+function solve(){
+    let y = eval(textbox.value);
+    (y == undefined) ? textbox.value = "" : textbox.value = y.toLocaleString();
+    return y
+}
 
-clear.addEventListener('click', () => {
-    textbox.value = "";
-    expression = "";
-})
+function clearText(){
+    textbox.value = '';
+}
 
-del.addEventListener('click',() => {
-    console.log(textbox.value)
-})
-
-
-// function display(val){
-//     document.getElementById('textbox').value += val
-//     return val
-// }
-
-// function solve(){
-//     let x = document.getElementById('textbox').value;
-//     let y = eval(x);
-//     document.getElementById('textbox').value = y
-//     return y
-// }
-
-// function clear(){
-//     // document.getElementById('textbox').value = '';
-//     alert("L")
-// }
+function del() {
+    (textbox.value > 1) ? textbox.value = textbox.value.slice(0,textbox.value.length - 1) 
+    : textbox.value = ""
+}

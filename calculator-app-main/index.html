@@ -40,7 +40,7 @@
                     <input class="theme-one set-one pack" type="submit" onClick="display('7')" id="" value="7">
                     <input class="theme-one set-one pack" type="submit" onClick="display('8')" id="" value="8">
                     <input class="theme-one set-one pack" type="submit" onClick="display('9')" id="" value="9">
-                    <input class="clear clear-theme-one set-three pack"  type="submit" id="del" value="DEL">
+                    <input class="clear clear-theme-one set-three pack" onclick="del()"  type="submit" id="del" value="DEL">
                     <input class="theme-one set-one pack" type="submit" onClick="display('4')" id="" value="4">
                     <input class="theme-one set-one pack" type="submit" onClick="display('5')" id="" value="5">
                     <input class="theme-one set-one pack" type="submit" onClick="display('6')" id="" value="6">
@@ -53,8 +53,8 @@
                     <input class="theme-one set-one pack" type="submit" onClick="display('0')" id="" value="0">
                     <input class="operator theme-one set-one pack" type="submit" onClick="display('/')" id="" value="/">
                     <input class="operator theme-one set-one pack" type="submit" onClick="display('*')" id="" value="x">
-                    <input class="clear clear-theme-one set-three pack" type="submit" onClick="clear()" id="clear"  value="RESET">
-                    <input class="equal eq-theme-one set-four pack" type="submit" id="" value="=">
+                    <input class="clear clear-theme-one set-three pack" type="submit" onClick="clearText()" id="clear"  value="RESET">
+                    <input class="equal eq-theme-one set-four pack" onclick="solve()" type="submit" id="" value="=">
             </div>
         </div>
     </main>
