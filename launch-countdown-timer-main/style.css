@@ -9,27 +9,48 @@ html,body,main {
     height: 100%;
     margin: 0;
     padding: 0;
+    color: white;
     font-family: 'Red Hat Text', sans-serif;
+    background-color: hsl(234, 17%, 12%);
+    background-image:  url(./images/bg-stars.svg), url(./images/pattern-hills.svg);
+    background-repeat: no-repeat,no-repeat;
+    background-position: center,bottom;
 }
 main {
     display: grid;
 }
 .container {
+    width: 60%;
+    height: 85%;
     margin: auto;
-    width: 50%;
-    height: 50%;
-    border: 1px solid black;
+    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+}
+.launch {
+    width: 100%;
+    flex-grow: 1;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-}
-.box {
-    width: 20%;
-    height: 60%;
+    justify-content: center;
     border: 1px solid red;
-    display: grid;
 }
-.box p {
-    margin: auto;
-    font-size: 4em;
+.count {
+    width: 100%;
+    flex-grow: 7;
+    border: 1px solid blueviolet;
+}
+.social {
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid yellow;
+}
+.launch h1{ 
+    letter-spacing: 2.5px;
+}
+.social nav a{
+    margin: 15px;
 }
