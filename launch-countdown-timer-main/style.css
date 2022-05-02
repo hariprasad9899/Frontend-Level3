@@ -38,6 +38,9 @@ main {
 .count {
     width: 100%;
     flex-grow: 7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: 1px solid blueviolet;
 }
 .social {
@@ -53,4 +56,71 @@ main {
 }
 .social nav a{
     margin: 15px;
+}
+.count .flip {
+    width: 30%;
+    height: 270px;
+    color: black;
+    position: relative;
+    background-color: white;
+}
+.flip-one {
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: lightcyan;
+}
+.flip-one .inner-top {
+    width: 100%;
+    height: 50%;
+    display: grid;
+    background-color: lightcoral;
+}
+.flip-one .inner-bottom {
+    width: 100%;
+    height: 50%;
+    display: grid;
+    background-color: lightgreen;
+}
+.flip-one .inner-top p,
+.flip-one .inner-bottom p {
+    margin: auto;
+}
+
+
+.flip-two {
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: lightgoldenrodyellow;
+}
+.flip-two .inner-top {
+    width: 100%;
+    height: 50%;
+    display: grid;
+    background-color: lightpink;
+}
+.flip-two .inner-bottom {
+    width: 100%;
+    height: 50%;
+    display: grid;
+    background-color: lightseagreen;
+}
+.flip-two .inner-top p,
+.flip-two .inner-bottom p {
+    margin: auto;
+}
+.flip-one { 
+    z-index: 3;
+}
+.flip-two {
+    z-index: 2;
 }
