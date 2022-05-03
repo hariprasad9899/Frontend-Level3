@@ -1,6 +1,9 @@
 
+// copying a node to create a clone to append in the list
 const sampleNode = document.getElementsByClassName('list_elem')[0];
 
+
+// function toggles completed tick for existing and newly added task's
 function newElemTick(elem) {
     elem.addEventListener('click', () => {
         elem.classList.toggle('ticked');
@@ -10,6 +13,7 @@ function newElemTick(elem) {
     })
 }
 
+// will get the existing ticke circles and adding event lisneners for them
 let ticked_mark = function() {
     let tick_buttons = document.getElementsByClassName('tick')
     for(const eachbtn of tick_buttons) {
@@ -19,21 +23,38 @@ let ticked_mark = function() {
 
 ticked_mark();
 
+// to remove the input ticket once user appened the task below
 let remove_tick = function() {
         let input = document.getElementById('input');
         input.addEventListener('input', () => {
         input.previousElementSibling.classList.remove('ticked');
+        
     }) 
 }
 
 remove_tick();
 
+let enterClick = function() {
+    let inp = document.getElementsByClassName('inp')[0];
+    let input = document.getElementById('input');
+    input.addEventListener('keypress', (event)=> {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("enterClick").click();
+        }
+    })
+}
+
+enterClick();
+
+// for showing the present count of the task
 let updateTotal = function() {
     let nos = document.getElementById('nos');
     let list_elem = document.getElementsByClassName('list_elem');
     nos.innerText = list_elem.length;
 }
 
+// for closing / removing a task from the list
 let closing = function() {
     let close = document.getElementsByClassName('close');
     for(const eachCloseBtn of close) {
@@ -45,6 +66,59 @@ let closing = function() {
 }
 closing();
 
+// drag animation function which enables dragging
+let drap_elem = function() {
+    const list = document.getElementsByClassName('list')[0];
+    const list_elem = document.getElementsByClassName('list_elem');
+
+    // start and end points based on which the element can be inserted before or after
+    // if dragged upwards inserting after the target or if dragged 
+    //downwards inserting before the target 
+    let startpoint; 
+    let endpoint;
+
+    for(const eachItem of list_elem) {
+
+        eachItem.addEventListener('dragstart', (e) => {
+            eachItem.classList.add('dragging');
+            startpoint = e.clientY;
+        })
+    
+        eachItem.addEventListener('dragend', (e) => { 
+            eachItem.classList.remove('dragging');
+        })
+    
+        eachItem.addEventListener('dragover', (e) => { 
+            e.preventDefault(); 
+            eachItem.classList.add('borders');
+        })
+    
+        eachItem.addEventListener('dragleave', (e) => {
+            e.preventDefault();
+            eachItem.classList.remove('borders');
+        })
+        eachItem.addEventListener('drop', (e)=> {
+            const draggable = document.querySelector('.dragging');
+            const text = document.getElementsByClassName('text');
+            endpoint = e.clientY;
+            eachItem.classList.remove('borders');
+            console.log(eachItem)
+
+            if(startpoint < endpoint) {
+                e.target.parentElement.insertBefore(draggable,e.target.nextSibling)
+                console.log(e.target)
+            } else if (startpoint > endpoint) {
+                e.target.parentNode.insertBefore(draggable,e.target)
+                console.log(e.target)
+            }
+        })
+    }
+}
+
+drap_elem();
+
+
+// main function which enables to append the task in the list
 let add_list = function() {
     let inp = document.getElementsByClassName('inp')[0];
     let input = document.getElementById('input');
@@ -57,16 +131,19 @@ let add_list = function() {
             let span = cloned_node.getElementsByTagName('span')[0];
             let list_elem = document.getElementsByClassName('list_elem');
             input.value = "";
+            // invoking the functions to update the new task's added
             updateTotal();
             newElemTick(span);
             remove_tick();
             closing();
+            drap_elem();
         }
     })
 }
 
 add_list();
 
+// function to show the active task
 function sortActive() {
     let texts = [...document.getElementsByClassName('text')];
     let counter = 0;
@@ -82,6 +159,7 @@ function sortActive() {
     nos.innerText = counter;
 }
 
+// function to show all the existing task
 function sortAll() {
     let texts = [...document.getElementsByClassName('text')];
     texts.forEach((elem) => {
@@ -91,6 +169,7 @@ function sortAll() {
 
 }
 
+// function to show the completed task
 function sortComplete() {
     let texts = [...document.getElementsByClassName('text')];
     let striked = document.getElementsByClassName('strike');
@@ -106,6 +185,7 @@ function sortComplete() {
 }
 
 
+// swich statement for the onclick functions of the states
 const nav = [...document.getElementsByClassName('states')]
 nav.forEach(elem => {
     elem.addEventListener('click', ()=> {
@@ -125,7 +205,7 @@ nav.forEach(elem => {
     })
 })
 
-
+// function to remove the completed task
 let clear = document.getElementById('clear');
 clear.addEventListener('click', () => {
     let texts = [...document.getElementsByClassName('text')];
@@ -137,9 +217,9 @@ clear.addEventListener('click', () => {
 })
 
 
+// functton to enable the color themes
 const switch_theme = document.getElementById('switch_theme');
 const theme = document.getElementsByClassName('theme');
-
 
 switch_theme.addEventListener('click', () => {
     for(let eachelem of theme) {
@@ -151,50 +231,4 @@ switch_theme.addEventListener('click', () => {
         switch_theme.src = './images/icon-sun.svg';
     }
 })
-
-
-
-
-
-
-
-
-
-// Drag and Drop 
-
-// const listbox = document.querySelector('.listbox');
-// const items = document.querySelectorAll('.item');
-// let startpoint
-// let endpoint;
-// for (const eachItem of items) {
-//     eachItem.addEventListener('dragstart', (e) => {
-//         eachItem.classList.add('dragging');
-//         startpoint = e.clientY;
-//     })
-
-//     eachItem.addEventListener('dragend', (e) => { 
-//         eachItem.classList.remove('dragging');
-//     })
-
-//     eachItem.addEventListener('dragover', (e) => { 
-//         e.preventDefault(); 
-//         eachItem.classList.add('borders');
-//     })
-
-//     eachItem.addEventListener('dragleave', (e) => {
-//         e.preventDefault();
-//         eachItem.classList.remove('borders');
-//     })
-//     eachItem.addEventListener('drop', (e)=> {
-//         const draggable = document.querySelector('.dragging');
-//         endpoint = e.clientY;
-//         eachItem.classList.remove('borders');
-//         console.log(startpoint,endpoint)
-//         if(startpoint < endpoint) {
-//             e.target.parentNode.insertBefore(draggable,e.target.nextSibling)
-//         } else if (startpoint > endpoint) {
-//             e.target.parentNode.insertBefore(draggable,e.target)
-//         }
-//     })
-// }
 

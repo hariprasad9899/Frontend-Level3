@@ -17,15 +17,15 @@
               <img id="switch_theme" class="theme" src="./images/icon-sun.svg" alt="">
             </div>
             <div class="typing theme">
-                <span class="inp tick theme">
+                <span class="inp tick theme" id="enterClick">
                     <img src="./images/icon-check.svg" alt="">
                 </span>
-                <input id="input" class="theme"  type="text" placeholder="Currenlty typing">
+                <input id="input" class="theme"  type="text" placeholder="Enter your todo champ..">
             </div>
             <div class="list theme">
 
 
-                <div class="list_elem theme">
+                <div class="list_elem theme" draggable="true">
                     <span class="tick">
                         <img src="./images/icon-check.svg" alt="">
                     </span>
@@ -34,7 +34,7 @@
                 </div>
 
 
-                <div class="list_elem theme">
+                <div class="list_elem theme" draggable="true">
                   <span class="tick">
                       <img src="./images/icon-check.svg" alt="">
                   </span>
@@ -43,7 +43,7 @@
               </div>
 
 
-              <div class="list_elem theme">
+              <div class="list_elem theme" draggable="true">
                 <span class="tick">
                     <img src="./images/icon-check.svg" alt="">
                 </span>
@@ -54,7 +54,7 @@
 
             </div>
 
-            <div class="state_tab theme">
+            <div class="state_tab theme" draggable="true">
                 <p><span id="nos">3</span>&nbsp;items left</p>
                 <div class = "nav">
                     <p class="states active theme" id="all">All</p>
@@ -65,21 +65,10 @@
             </div>
         </div>
 
+        <div class="drag-info theme">
+            <p>Drag and drop to reorder list</p>
+        </div>
 
-
-
-
-
-
-
-
-        <!-- <div class="listbox">
-            <p class="item" draggable="true">One</p>
-            <p class="item" draggable="true">Two</p>
-            <p class="item" draggable="true">Three</p>
-            <p class="item" draggable="true">Four</p>
-            <p class="item" draggable="true">Five</p>
-        </div> -->
     </main>
 </body>
 </html>
