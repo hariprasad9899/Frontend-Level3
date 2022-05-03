@@ -1,0 +1,14 @@
+@media screen and (max-width:600px) {
+    main.white_theme {
+        background: white url(./images/bg-mobile-light.jpg) top no-repeat;
+        background-size: 100%;
+    }
+    main {
+        background: hsl(235, 21%, 11%) url(./images/bg-mobile-dark.jpg) top no-repeat;
+        background-size: 100%;
+    }
+    .container {
+        margin-top: 10px;
+        width: 330px;
+    }
+}

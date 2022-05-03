@@ -12,18 +12,17 @@ html,body,main {
     font-family: 'Josefin Sans', sans-serif;
 }
 main {
-    background: white url(./images/bg-desktop-dark.jpg) top no-repeat;
+    background: hsl(235, 21%, 11%) url(./images/bg-desktop-dark.jpg) top no-repeat;
     display: grid;
 }
 
 .container {
-    width: 40%;
-    /* height: 80%; */
+    width: 470px;
     margin: auto;
-    margin-top: 80px;
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
-    /* border: 1px solid red; */
+    box-shadow: 0 8px 6px -5px rgba(0, 0, 0, 0.527);
 }
 .title {
     width: 100%;
@@ -31,7 +30,6 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* border: 1px solid black; */
 }
 .typing {
     width: 100%;
@@ -40,7 +38,6 @@ main {
     margin-bottom: 20px;
     border-radius: 5px;
     background-color: hsl(235, 24%, 19%);
-    /* border: 1px solid yellow; */
 }
 
 .list {
@@ -49,12 +46,10 @@ main {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     background-color: hsl(235, 24%, 19%);
-    /* border: 1px solid green; */
 }
 .state_tab {
     width: 100%;
     flex: 1;
-    /* border: 1px solid blue; */
 }
 
 .title h1 {
@@ -86,6 +81,7 @@ main {
 }
 .typing span:hover {
     cursor: pointer;
+    border: 1.3px solid hsl(192, 100%, 67%);
 }
 .typing .ticked {
     background: linear-gradient(to left, hsl(192, 100%, 67%),hsl(280, 87%, 65%));
@@ -110,10 +106,10 @@ main {
     padding: 5px 10px 5px 10px;
     padding: 10px 5px 10px 10px;
     display: flex;
-    /* background-color: red; */
     align-items: center;
     gap: 14px;
     color: white;
+    font-weight: 500;
     border-bottom: 1px solid hsl(234, 11%, 52%);
 }
 .list_elem span {
@@ -127,6 +123,7 @@ main {
 }
 .list_elem span:hover {
     cursor: pointer;
+    border: 1.3px solid hsl(192, 100%, 67%);
 }
 .list_elem span img {
     margin: auto;
@@ -150,13 +147,20 @@ main {
     margin-right: 5px;
     user-select: none;
 }
+.list_elem #close:hover {
+    cursor: pointer;
+}
 .state_tab {
     padding: 0px 20px 0px 20px;
     color: hsl(234, 11%, 52%);
     display: flex;
+    font-size: 0.9em;
     align-items: center;
     justify-content: space-between;
     background-color: hsl(235, 24%, 19%);
+}
+.state_tab p {
+    font-size: 0.8em;
 }
 .state_tab .nav {
     display: flex;
@@ -166,6 +170,44 @@ main {
 .state_tab p:hover {
     color: white;
     cursor: pointer;
+}
+.states.active {
+    color: hsl(220, 98%, 61%);
+}
+
+
+
+.typing.white_theme {
+    background-color: white;
+}
+.typing .inp.white_theme {
+    border: 1.4px solid hsl(236, 9%, 61%);
+}
+.typing input.white_theme {
+    background-color: white;
+    color: hsl(235, 19%, 35%);
+}
+.list.white_theme {
+    background-color: white;
+}
+.list_elem.white_theme {
+    color: hsl(235, 19%, 35%);
+}
+.list_elem.white_theme .strike {
+    color: hsl(233, 11%, 84%);
+}
+.state_tab.white_theme {
+    background-color: white;
+}
+.state_tab.white_theme p:hover {
+    color: hsl(235, 19%, 35%);
+}
+.states.white_theme.active {
+    color: hsl(220, 98%, 61%);
+    font-weight: 600;
+}
+main.white_theme {
+    background: white url(./images/bg-desktop-light.jpg) top no-repeat;
 }
 
 

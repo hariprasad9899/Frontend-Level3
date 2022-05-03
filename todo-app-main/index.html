@@ -5,62 +5,63 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="media.css">
   <script src="app.js" defer></script>
   <title>Frontend Mentor | Todo app</title>
 </head>
 <body>
-    <main>
+    <main class="theme">
         <div class="container">
             <div class="title">
               <h1>TODO</h1>
-              <img src="./images/icon-sun.svg" alt="">
+              <img id="switch_theme" class="theme" src="./images/icon-sun.svg" alt="">
             </div>
-            <div class="typing">
-                <span class="inp tick">
+            <div class="typing theme">
+                <span class="inp tick theme">
                     <img src="./images/icon-check.svg" alt="">
                 </span>
-                <input id="input"  type="text" placeholder="Currenlty typing">
+                <input id="input" class="theme"  type="text" placeholder="Currenlty typing">
             </div>
-            <div class="list">
+            <div class="list theme">
 
 
-                <div class="list_elem">
+                <div class="list_elem theme">
                     <span class="tick">
                         <img src="./images/icon-check.svg" alt="">
                     </span>
-                    <p id="text">Sample 1</p>
+                    <p id="text" class="text">Sample 1</p>
                     <img id="close" class="close" src="./images/icon-cross.svg" alt="">
                 </div>
 
 
-                <div class="list_elem">
+                <div class="list_elem theme">
                   <span class="tick">
                       <img src="./images/icon-check.svg" alt="">
                   </span>
-                  <p>Sample 2</p>
+                  <p class="text">Sample 2</p>
                   <img id="close" class="close" src="./images/icon-cross.svg" alt="">
               </div>
 
 
-              <div class="list_elem">
+              <div class="list_elem theme">
                 <span class="tick">
                     <img src="./images/icon-check.svg" alt="">
                 </span>
-                <p>Sample 3</p>
+                <p class="text">Sample 3</p>
                 <img id="close" class="close" src="./images/icon-cross.svg" alt="">
               </div>
 
 
             </div>
 
-            <div class="state_tab">
-                <p>5 items left</p>
+            <div class="state_tab theme">
+                <p><span id="nos">3</span>&nbsp;items left</p>
                 <div class = "nav">
-                    <p>All</p>
-                    <p>Active</p>
-                    <p>Completed</p>
+                    <p class="states active theme" id="all">All</p>
+                    <p class="states theme" id="active">Active</p>
+                    <p class="states theme" id="completed">Completed</p>
                 </div>
-                <p>Clear Completed</p>
+                <p id="clear">Clear Completed</p>
             </div>
         </div>
 
