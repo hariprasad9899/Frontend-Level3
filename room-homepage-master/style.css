@@ -6,7 +6,6 @@
 }
 html,body,main {
     width: 100%;
-    /* height: 100%; */
     margin: 0;
     padding: 0;
     font-family: 'League Spartan', sans-serif;
@@ -14,43 +13,35 @@ html,body,main {
 }
 main {
     width: 100%;
-    /* height: 100%; */
 }
 .partOne {
     width: 100%;
-    /* height: 65%; */
     display: flex;
     position: relative;
-    /* border: 1px solid black; */
 }
 .partTwo {
     width: 100%;
-    /* height: 35%; */
     display: flex;
-    /* border: 1px solid red; */
 }
 .partOne .imgSection {
     width: 60%;
-    /* height: 100%; */
     position: relative;
     background-color: lightcyan;
 }
 .imgSection img {
     width: 100%;
     height: 100%;
-    /* height: 100%; */
 }
 .partOne .aboutSection {
     width: 40%;
-    /* height: 100%; */
     position: relative;
     display: flex;
-    /* background-color: lightgrey; */
 }
 .partTwo .box {
     width: 30%;
-    /* border: 1px solid black;
-    background-color: lightpink; */
+}
+img {
+    user-select: none;
 }
 .partTwo .box img {
     width: 100%;
@@ -62,9 +53,7 @@ main {
 }
 .aboutSection .innerContent {
     width: 80%;
-    /* height: 70%; */
     margin: auto;
-    /* background-color: #eee; */
 }
 .innerContent .title h1 {
     font-size: 2.8em;
@@ -89,10 +78,16 @@ main {
     cursor: pointer;
     color: hsl(0, 0%, 27%);
 }
+.shopNow .move {
+    margin-left: 20px;
+    transition: 0.3s ease;
+}
+.shopNow .reverse {
+    margin-left: -20px;
+    transition: 0.7s ease;
+}
 .box:nth-child(2) .innerDetail{
     width: 90%;
-    /* height: 70%; */
-    /* background-color: lightcoral; */
     margin: auto;
 }
 .innerDetail .aboutFurniture h4 {
@@ -118,9 +113,9 @@ main {
 }
 .toggle span img {
     margin: auto;
+    user-select: none;
 }
 .toggle span:hover {
-    background-color: hsl(0, 0%, 27%);
     cursor: pointer;
 }
 .imgSection .menuBar {
@@ -128,13 +123,11 @@ main {
     top: 10%;
     width: 100%;
     display: flex;
-    /* background-color: lightblue; */
 }
 .menuBar .icon {
     flex-grow: 2;
     display: grid;
     padding: 5px;
-    /* background-color: yellow; */
 }
 .menuBar .icon img {
     margin: auto;
@@ -142,7 +135,6 @@ main {
 }
 .menuBar .menus {
     flex-grow: 5;
-    /* background-color: red; */
     display: flex;
     align-items: center;
 }
@@ -165,6 +157,9 @@ main {
 }
 .mobMenuDrop {
     display: none;
+}
+.imgSection .imgDesktop {
+    display: block;
 }
 .imgSection .imgMobile {
     display: none;

@@ -14,8 +14,8 @@
 
         <div class="partOne">
             <div class="imgSection">
-                <img class="imgDesktop" src="./images/desktop-image-hero-1.jpg" alt="">
-                <img class="imgMobile" src="./images/mobile-image-hero-1.jpg" alt="">
+                <img class="imgDesktop" style="display: block;" id="imgDes" src="./images/desktop-image-hero-1.jpg" alt="">
+                <img class="imgMobile" style="display: none;" id="imgMob" src="./images/mobile-image-hero-1.jpg" alt="">
                 <div class="menuBar desktop">
                     <div class="icon">
                         <img src="./images/logo.svg" alt="">
@@ -31,10 +31,10 @@
                 </div>
 
                 <div class="toggle mobile">
-                    <span>
+                    <span onclick="document.getElementById('move-sub').click()">
                         <img src="./images/icon-angle-left.svg" alt="">
                     </span>
-                    <span>
+                    <span onclick="document.getElementById('move-add').click()">
                         <img src="./images/icon-angle-right.svg" alt="">
                     </span>
                 </div>
@@ -47,25 +47,25 @@
             <div class="aboutSection">
                 <div class="innerContent">
                     <div class="title">
-                        <h1>Discover innovative ways to decorate</h1>
+                        <h1 id="title">Discover innovative ways to decorate</h1>
                     </div>
                     <div class="property">
-                        <p>
+                        <p id="property">
                             We provide unmatched quality, comfort, and style for property owners across the country. 
                             Our experts combine form and function in bringing your vision to life. Create a room in your 
                             own style with our collection and make your property a reflection of you and what you love.
                         </p>
                     </div>
                     <div class="shopNow">
-                        <p>SHOP NOW</p>
-                        <img src="./images/icon-arrow.svg" alt="">
+                        <p id="shop">SHOP NOW</p>
+                        <img id="arrow" src="./images/icon-arrow.svg" alt="">
                     </div>
                 </div>
                 <div class="toggle desktop">
-                    <span id="prev">
+                    <span class="move sub" id="move-sub">
                         <img src="./images/icon-angle-left.svg" alt="">
                     </span>
-                    <span id="next">
+                    <span class="move add" id="move-add">
                         <img src="./images/icon-angle-right.svg" alt="">
                     </span>
                 </div>

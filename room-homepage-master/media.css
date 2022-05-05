@@ -42,10 +42,10 @@
     .partOne .mobile span {
         width: 40px;
     }
-    .imgSection .imgMobile {
+    .imgSection .imgDesktop {
         display: block;
     }
-    .imgSection .imgDesktop {
+    .imgSection .imgMobile {
         display: none;
     }
 }
@@ -59,7 +59,9 @@
     .imgSection .menuBar {
         display: none;
     }
-
+    .mobileMenu #open:hover {
+        cursor: pointer;
+    }
     .mobileMenu {
         display: flex;
         align-items: center;
@@ -67,7 +69,6 @@
         position: absolute;
         width: 60%;
         top: 10%;
-        /* background-color: red; */
     }
     .mobileMenu img:nth-child(1) {
         width: 30px;
@@ -90,6 +91,9 @@
     }
     .mobMenuDrop .close {
         width: 10%;
+    }
+    .mobMenuDrop .close #close:hover {
+        cursor: pointer;
     }
     .mobMenuDrop .close img {
         margin-left: 25px ;
