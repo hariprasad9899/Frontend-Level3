@@ -1,0 +1,110 @@
+@media screen and (max-width:1200px) {
+    .aboutSection .innerContent {
+        margin-bottom: 80px;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .partOne {
+        flex-direction: column;
+    }
+    .partOne .imgSection,
+    .partOne .aboutSection {
+        width: 100%;
+    }
+    .shopNow {
+        padding-bottom: 30px;
+    }
+    .partTwo {
+        flex-direction: column;
+    }
+    .partTwo .box {
+        width: 100%;
+    }
+    .partTwo .box:nth-child(2) {
+        width: 100%;
+    }
+    .aboutSection .innerContent {
+        width: 95%;
+    }
+    .box:nth-child(2) .innerDetail {
+        width: 95%;
+        padding: 20px 0px 20px 0px;
+    }
+    .aboutSection .desktop {
+        display: none;
+    }
+    .partOne .mobile {
+        display: flex;
+        right: 0%;
+        bottom: 1%;
+    }
+    .partOne .mobile span {
+        width: 40px;
+    }
+    .imgSection .imgMobile {
+        display: block;
+    }
+    .imgSection .imgDesktop {
+        display: none;
+    }
+}
+@media screen and (max-width:500px) {
+    .aboutSection .innerContent,
+    .box:nth-child(2) .innerDetail {
+        width: 90%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .imgSection .menuBar {
+        display: none;
+    }
+
+    .mobileMenu {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: absolute;
+        width: 60%;
+        top: 10%;
+        /* background-color: red; */
+    }
+    .mobileMenu img:nth-child(1) {
+        width: 30px;
+        margin-left: 20px;
+    }
+    .mobileMenu img:nth-child(2) {
+        width: 70px;
+    }
+    .mobMenuDrop {
+        position: absolute;
+        width: 100%;
+        background-color: white;
+        display: flex;
+        gap: 20px;
+        top: -300px;
+        align-items: center;
+        transition: 0.5s ease;
+        justify-content: space-between;
+        padding: 40px 0px 40px 0px;
+    }
+    .mobMenuDrop .close {
+        width: 10%;
+    }
+    .mobMenuDrop .close img {
+        margin-left: 25px ;
+    }
+    .mobMenuDrop .navs {
+        width: 70%;
+    }
+    .navs nav a {
+        text-decoration: none;
+        color: black;
+        font-size: 1.1em;
+        font-weight: 600;
+        margin: 0 5px 0 5px;
+    }
+    .show {
+        top:0px;
+    }
+}
