@@ -10,8 +10,11 @@ L.marker([0,0], {icon: myIcon}).addTo(ipMap)
 tiles.addTo(ipMap);
 
 
-function updateMap(x = 12.780889, y = 437.770445 ) {
-
+function updateMap(x,y) {
+    var container = L.DomUtil.get('mapid'); 
+    if(container != null){ 
+        container._leaflet_id = null; 
+    }
     ipMap = L.map('mapid').setView([x,y],13)
     L.marker([x,y], {icon: myIcon}).addTo(ipMap)
     tiles.addTo(ipMap);
@@ -62,6 +65,6 @@ function getMap() {
     showMap();
 }
 
-// window.onload = function() {
-//     updateMap();
-// }
+window.onload = function() {
+    updateMap(12.780889,437.770445);
+}
