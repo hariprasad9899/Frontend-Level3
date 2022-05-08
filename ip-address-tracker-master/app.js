@@ -1,3 +1,4 @@
+const ipInput = document.getElementById('ipInput');
 var ipMap = L.map('mapid').setView([0,0],13)
 const tileURL = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 const attibution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
@@ -6,8 +7,10 @@ const myIcon = L.icon({
     iconUrl: './images/icon-location.svg',
     iconSize: [40,40],
 })
-L.marker([0,0], {icon: myIcon}).addTo(ipMap)
+var marker1 = L.marker([0,0], {icon: myIcon})
+marker1.addTo(ipMap)
 tiles.addTo(ipMap);
+
 
 
 function updateMap(x,y) {
@@ -16,15 +19,16 @@ function updateMap(x,y) {
         container._leaflet_id = null; 
     }
     ipMap = L.map('mapid').setView([x,y],13)
-    L.marker([x,y], {icon: myIcon}).addTo(ipMap)
+    var newLatLng = new L.LatLng(x,y);
+    marker1.setLatLng(newLatLng);
     tiles.addTo(ipMap);
+    marker1.addTo(ipMap);
 }
 
 
 function getMap() {
 
     let base_url =  "https://geo.ipify.org/api/v2/country,city?apiKey=at_Z8jhxu78jswibEU0zuFT0MSXHVrwX&ipAddress=";
-    const ipInput = document.getElementById('ipInput');
     let ip_url = ipInput.value;
     let url = base_url.concat(ip_url);
 
@@ -68,3 +72,8 @@ function getMap() {
 window.onload = function() {
     updateMap(12.780889,437.770445);
 }
+ipInput.addEventListener('keypress', (event) => {
+    if(event.key === "Enter") {
+        document.getElementById('btn').click();
+    }
+})
