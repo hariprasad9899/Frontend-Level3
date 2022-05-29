@@ -10,6 +10,7 @@ html,body,main {
     margin: 0;
     padding: 0;
     color: white;
+    overflow-x: hidden;
     font-family: 'Red Hat Text', sans-serif;
     background-color: hsl(234, 17%, 12%);
     background-image:  url(./images/bg-stars.svg), url(./images/pattern-hills.svg);
@@ -20,10 +21,9 @@ main {
     display: grid;
 }
 .container {
-    width: 60%;
+    width:600px;
     height: 85%;
     margin: auto;
-    border: 1px solid white;
     display: flex;
     flex-direction: column;
 }
@@ -31,17 +31,9 @@ main {
     width: 100%;
     flex-grow: 1;
     display: flex;
+    text-align: center;
     align-items: center;
     justify-content: center;
-    border: 1px solid red;
-}
-.count {
-    width: 100%;
-    flex-grow: 7;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid blueviolet;
 }
 .social {
     width: 100%;
@@ -49,7 +41,6 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid yellow;
 }
 .launch h1{ 
     letter-spacing: 2.5px;
@@ -57,70 +48,64 @@ main {
 .social nav a{
     margin: 15px;
 }
-.count .flip {
-    width: 30%;
-    height: 270px;
-    color: black;
+.social nav a:hover {
+    cursor: pointer;
+}
+.timer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+.flipbox {
+    width: 130px;
+    height: 170px;
+    display: flex;
+    padding: 5px;
+    flex-direction: column;
+    background-color: transparent;
+    perspective:1000px;
+}
+.flipbox-inner {
+    width: 100%;
+    height: 100%;
     position: relative;
-    background-color: white;
+    transition: 1s ease-in-out;
+    transform-style: preserve-3d;
+    
 }
-.flip-one {
-    top: 0;
+.flipbox-front, .flipbox-back {
     position: absolute;
-    width: 100%;
     height: 100%;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    background-color: lightcyan;
-}
-.flip-one .inner-top {
     width: 100%;
-    height: 50%;
+    text-align: center;
     display: grid;
-    background-color: lightcoral;
+    border-radius: 5px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
-.flip-one .inner-bottom {
-    width: 100%;
-    height: 50%;
-    display: grid;
-    background-color: lightgreen;
+.flipbox-front {
+    background-color: hsl(236, 21%, 26%);
+    color: black;
 }
-.flip-one .inner-top p,
-.flip-one .inner-bottom p {
+.flipbox-back {
+    background-color: hsl(236, 21%, 26%);
+    transform: rotateX(180deg);
+    color: black;
+}
+.flipbox.active .flipbox-inner{
+    transform: rotateX(180deg);
+}
+.flipbox-back h3, .flipbox-front h3{
     margin: auto;
+    font-size: 5em;
+    color: hsl(345, 95%, 68%);
 }
-
-
-.flip-two {
-    top: 0;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    background-color: lightgoldenrodyellow;
-}
-.flip-two .inner-top {
-    width: 100%;
-    height: 50%;
-    display: grid;
-    background-color: lightpink;
-}
-.flip-two .inner-bottom {
-    width: 100%;
-    height: 50%;
-    display: grid;
-    background-color: lightseagreen;
-}
-.flip-two .inner-top p,
-.flip-two .inner-bottom p {
-    margin: auto;
-}
-.flip-one { 
-    z-index: 3;
-}
-.flip-two {
-    z-index: 2;
+.flipbox p {
+    align-self: center;
+    color: hsl(237, 18%, 59%);
+    font-weight: 100;
+    font-size: 0.8em;
 }

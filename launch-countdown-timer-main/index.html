@@ -7,7 +7,6 @@
   <title>Frontend Mentor | Launch countdown timer</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="media.css">
-  <link rel="stylesheet" href="./flipclock.css">
 </head>
 <body>
     <main>
@@ -15,27 +14,55 @@
             <div class="launch">
                 <h1>WE'RE LAUNCHING SOON</h1>
             </div>
-            <div class="count">
-                <div class="flip">
-                  <div class="flip-one">
-                      <div class="inner-top">
-                          <p>44</p>
-                      </div>
-                      <div class="inner-bottom">
-                          <p>44</p>
-                      </div>
-                  </div>
+            <div class="timer">
 
-                  <div class="flip-two">
-                      <div class="inner-top">
-                          <p>45</p>
-                      </div>
-                      <div class="inner-bottom">
-                          <p>45</p>
-                      </div>
-                  </div>
+                    <div class="flipbox">
+                        <div class="flipbox-inner">
+                            <div class="flipbox-front">
+                                <h3 class="val days">00</h3>
+                            </div>
+                            <div class="flipbox-back">
+                                <h3 class="val days">00</h3>
+                            </div>
+                        </div>
+                        <p>DAYS</p>
+                    </div>
 
-                </div>
+                    <div class="flipbox">
+                        <div class="flipbox-inner">
+                            <div class="flipbox-front">
+                                <h3 class="val hours">00</h3>
+                            </div>
+                            <div class="flipbox-back">
+                                <h3 class="val hours">00</h3>
+                            </div>
+                        </div>
+                        <p>HOURS</p>
+                    </div>
+
+                    <div class="flipbox">
+                        <div class="flipbox-inner">
+                            <div class="flipbox-front">
+                                <h3 class="val minutes">00</h3>
+                            </div>
+                            <div class="flipbox-back">
+                                <h3 class="val minutes">00</h3>
+                            </div>
+                        </div>
+                        <p>MINUTES</p>
+                    </div>
+
+                    <div class="flipbox">
+                        <div class="flipbox-inner">
+                            <div class="flipbox-front">
+                                <h3 class="val seconds">00</h3>
+                            </div>
+                            <div class="flipbox-back">
+                                <h3 class="val seconds">00</h3>
+                            </div>
+                        </div>
+                        <p>SECONDS</p>
+                    </div>
             </div>
             <div class="social">
                 <nav>
@@ -49,5 +76,4 @@
   
 </body>
 <script src="app.js"></script>
-<script src="./flipclock.js"></script>
 </html>
